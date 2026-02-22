@@ -1,0 +1,8 @@
+Origin: Nico Repo
+Label: Nico Repo E
+Suite: stable
+Version: 2.0
+Codename: ios
+Architectures: iphoneos-arm
+Components: main
+Description: Repositorio de Nico para proyecto escolar.
