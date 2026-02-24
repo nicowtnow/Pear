@@ -3,126 +3,121 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pear Inc. - El Futuro que no Prometieron</title>
+    <title>Pear Inc. - Liquid Glass Edition</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap');
         
         body { 
-            /* Fondo inspirado en tu iPhone con un toque más abstracto y limpio */
-            background: linear-gradient(to bottom, #87CEEB 0%, #B0E0E6 100%); /* Tonos celestes */
+            /* El degradado azul-verde que pediste */
+            background: linear-gradient(135deg, #00b4db 0%, #00ffcc 100%);
             background-attachment: fixed;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.4"><circle cx="20" cy="20" r="10" fill="rgba(255,255,255,0.4)"/><circle cx="80" cy="50" r="15" fill="rgba(255,255,255,0.3)"/><circle cx="50" cy="80" r="12" fill="rgba(255,255,255,0.2)"/></svg>');
-            background-size: cover;
-            color: #333; /* Texto más oscuro para el fondo claro */
-            font-family: 'Segoe UI', sans-serif; /* Fuente suave */
+            color: #004d40;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0; padding: 0; min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* EFECTO DE BURBUJAS FLOTANTES */
+        .bubble {
+            position: absolute; background: rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.5); border-radius: 50%;
+            bottom: -100px; animation: float 15s infinite ease-in; z-index: 0;
+        }
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-1200px) rotate(360deg); opacity: 0; }
         }
 
         #navbar {
-            background: rgba(255, 255, 255, 0.7); /* Transparente y glaseado */
-            backdrop-filter: blur(10px); /* Efecto de cristal esmerilado */
-            -webkit-backdrop-filter: blur(10px);
-            height: 50px; border-bottom: 1px solid rgba(255,255,255,0.5);
-            display: flex; align-items: center; padding: 0 10px;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+            height: 55px; border-bottom: 2px solid rgba(255,255,255,0.6);
+            display: flex; align-items: center; padding: 0 15px;
             position: sticky; top: 0; z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
-        .apple-icon { font-size: 22px; color: #555; margin-right: 15px; cursor: pointer; text-shadow: 0 1px 0 rgba(255,255,255,0.8); }
-        #navbar ul { list-style: none; margin: 0; padding: 0; display: flex; flex: 1; height: 100%; }
+        .apple-icon { font-size: 24px; color: #fff; cursor: pointer; text-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+        #navbar ul { list-style: none; margin: 0 20px; padding: 0; display: flex; flex: 1; }
         #navbar li {
-            flex: 1; text-align: center; line-height: 50px;
-            color: #666; font-size: 12px; font-weight: bold; cursor: pointer; 
-            border-right: 1px solid rgba(255,255,255,0.3);
-            text-shadow: 0 1px 0 rgba(255,255,255,0.8);
-            transition: all 0.2s ease-in-out;
+            flex: 1; text-align: center; line-height: 55px; color: #fff;
+            font-size: 13px; font-weight: bold; cursor: pointer;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3); transition: 0.3s;
         }
         #navbar li.active { 
-            background: rgba(255,255,255,0.9); 
-            color: #007aff; /* Azul claro de Frutiger Aero */
-            border-bottom: 2px solid #007aff;
-            box-shadow: inset 0 0 10px rgba(0,122,255,0.2);
+            background: rgba(255,255,255,0.3); border-radius: 10px;
+            box-shadow: inset 0 2px 10px rgba(255,255,255,0.5);
         }
-        #navbar li:hover:not(.active) { background: rgba(255,255,255,0.5); }
 
-        .nav-special { 
-            width: 45px; text-align: center; font-size: 16px; cursor: pointer; 
-            height: 50px; line-height: 50px; border-left: 1px solid rgba(255,255,255,0.3);
-            color: #007aff; font-weight: bold; text-shadow: 0 1px 0 rgba(255,255,255,0.8);
-        }
-        #secret-btn { /* El botón :) */ } 
-
-        #main-container { max-width: 550px; margin: 40px auto; padding: 20px; }
+        #main-container { max-width: 550px; margin: 30px auto; padding: 20px; position: relative; z-index: 1; }
         
+        .tagline { 
+            text-align: center; font-size: 18px; font-weight: bold; color: #fff;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2); margin-bottom: 25px;
+        }
+
         .section { display: none; }
         .section.active { display: block !important; }
         
-        /* Estilo de cajas con efecto glaseado y borde sutil */
+        /* DISEÑO LIQUID GLASS */
         .box-ui { 
-            background: rgba(255, 255, 255, 0.7); /* Transparencia */
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.8); /* Borde claro y brillante */
-            padding: 25px; border-radius: 18px; margin-bottom: 25px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.7); /* Brillo y sombra */
-            text-align: center;
-            color: #444; /* Texto más oscuro para contraste */
-            text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            border: 2px solid rgba(255, 255, 255, 0.7);
+            padding: 30px; border-radius: 25px; margin-bottom: 25px;
+            /* El brillo del vidrio líquido */
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1), 
+                        inset 0 10px 20px rgba(255,255,255,0.6),
+                        inset 0 -5px 15px rgba(255,255,255,0.3);
+            position: relative; overflow: hidden;
         }
-        .box-ui h2 { color: #007aff; text-shadow: 0 1px 0 rgba(255,255,255,0.7); }
-        .box-ui p { line-height: 1.6; }
+        /* Reflejo superior del cristal */
+        .box-ui::before {
+            content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 50%;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 100%);
+            pointer-events: none;
+        }
 
         .count-num { 
-            font-size: 60px; font-weight: 700; 
-            color: #007aff; /* Azul vibrante */
-            font-family: 'Segoe UI', sans-serif; 
-            text-shadow: 0 0 10px rgba(0,122,255,0.5), 0 1px 0 rgba(255,255,255,0.7); /* Resplandor y brillo */
+            font-size: 70px; font-weight: bold; color: #fff; 
+            text-shadow: 0 5px 15px rgba(0,180,219,0.5); margin: 10px 0;
+            text-align: center;
         }
-        
-        /* VENTANA POPUP (TOAST) */
-        #toast {
-            display: none; position: fixed; top: 50%; left: 50%;
-            transform: translate(-50%, -50%); 
-            background: rgba(255, 255, 255, 0.9); /* Casi opaco */
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            color: #333; padding: 30px; border-radius: 20px; z-index: 2000; 
-            border: 1px solid rgba(255,255,255,0.9); 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.9);
-            width: 300px; text-align: center;
-        }
-        #toast-header { font-size: 18px; margin-bottom: 20px; color: #007aff; text-shadow: 0 1px 0 rgba(255,255,255,0.8); }
-        #toast-body p { color: #555; font-size: 13px; line-height: 1.4; }
 
         .btn-ui { 
-            background: linear-gradient(to bottom, #E0E0E0 0%, #C0C0C0 100%); /* Botón glaseado */
-            color: #333; border: 1px solid rgba(255,255,255,0.7); 
-            padding: 10px 20px; margin: 8px; border-radius: 10px; cursor: pointer; 
-            font-size: 13px; font-weight: bold; text-shadow: 0 1px 0 rgba(255,255,255,0.8);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.7);
-            transition: all 0.2s ease-in-out;
-            width: 80%; /* Para que los botones se vean bien en el popup */
-        }
-        .btn-ui:hover { 
-            background: linear-gradient(to bottom, #F0F0F0 0%, #D0D0D0 100%); 
-            box-shadow: 0 3px 8px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.9);
+            background: linear-gradient(to bottom, #fff 0%, #e0e0e0 100%);
+            border: 1px solid #fff; padding: 12px; border-radius: 15px; 
+            font-weight: bold; color: #00b4db; cursor: pointer; width: 80%;
+            margin: 10px auto; display: block;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        footer { 
-            text-align: center; padding: 40px 0; color: #888; font-size: 11px; 
-            pointer-events: none; /* No clickable */
-            text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+        #toast {
+            display: none; position: fixed; top: 50%; left: 50%;
+            transform: translate(-50%, -50%); background: rgba(255,255,255,0.95);
+            padding: 30px; border-radius: 30px; z-index: 2000; 
+            border: 3px solid #00ffcc; width: 280px; text-align: center;
+            box-shadow: 0 0 50px rgba(0,0,0,0.3);
         }
-        .tagline { 
-            font-size: 16px; font-weight: bold; margin-bottom: 15px; 
-            color: #007aff; text-shadow: 0 1px 0 rgba(255,255,255,0.7); 
-            letter-spacing: 0.5px;
-        }
+
+        footer { text-align: center; padding: 20px; color: rgba(255,255,255,0.7); font-size: 12px; }
     </style>
 </head>
 <body>
 
+<script>
+    for (let i = 0; i < 15; i++) {
+        let b = document.createElement('div');
+        b.className = 'bubble';
+        let size = Math.random() * 60 + 20 + 'px';
+        b.style.width = size; b.style.height = size;
+        b.style.left = Math.random() * 100 + '%';
+        b.style.animationDelay = Math.random() * 10 + 's';
+        document.body.appendChild(b);
+    }
+</script>
+
 <div id="toast">
-    <div id="toast-header"></div>
+    <div id="toast-header" style="font-weight: bold; color: #00b4db; margin-bottom: 15px;"></div>
     <div id="toast-body"></div>
 </div>
 
@@ -134,7 +129,7 @@
         <li id="tab-pear" onclick="showSection('pear')">Pear</li>
         <li id="tab-xt" onclick="showSection('xt')">XT</li>
     </ul>
-    <div id="secret-btn" class="nav-special" onclick="openMainPopup()">:)</div>
+    <div style="font-size: 20px; cursor: pointer;" onclick="openMainPopup()">:)</div>
 </div>
 
 <div id="main-container">
@@ -142,34 +137,32 @@
     
     <div id="sec-cydia" class="section active">
         <div class="box-ui">
-            <p style="font-size: 12px; color: #666; margin: 0 0 15px 0;">Contador de request desde y hacia Cydia</p>
+            <p style="font-size: 13px; text-align: center; opacity: 0.8;">Contador de request desde y hacia Cydia</p>
             <div id="contador-dinamico" class="count-num">---</div>
+            <p style="text-align: center; font-weight: bold; color: #fff;">LIVE SERVER</p>
         </div>
     </div>
     
     <div id="sec-5d" class="section">
         <div class="box-ui">
-            <h2 style="font-size: 20px; margin-top: 0;">MEMORIA 5D</h2>
-            <p style="font-size: 14px; text-align: justify; line-height: 1.5; color: #555;">
-                "La materia es el eco de una dimensión que ya no existe."
-            </p>
-            <p style="font-size: 14px; text-align: justify; line-height: 1.5; color: #555; margin-top: 20px;">
-                Ese momento, el <b>Big Grand Reset</b>, no es el fin del mundo. Es más bien como un cambio de escala. Imagina que llegamos a la dimensión 999,999 y ya no cabe nada más; entonces, todo ese universo colapsa para convertirse en la unidad básica, en el primer "punto" de un nivel superior.
-            </p>
+            <h2 style="text-align: center;">MEMORIA 5D</h2>
+            <p>"La materia es el eco de una dimensión que ya no existe."</p>
+            <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.5);">
+            <p style="font-size: 14px;">Ese momento, el <b>Big Grand Reset</b>, no es el fin del mundo. Es más bien como un cambio de escala. Imagina que llegamos a la dimensión 999,999 y ya no cabe nada más; entonces, todo ese universo colapsa para convertirse en la unidad básica, en el primer "punto" de un nivel superior.</p>
         </div>
     </div>
 
     <div id="sec-pear" class="section">
         <div class="box-ui">
             <h2>Pear Inc.</h2>
-            <p style="font-size: 14px; color: #555;">Estamos trabajando en hacer la marca Pear y accesorios realidad con aplicaciones como <b>theztap</b>. Nos enfocamos en unificar hardware y software.</p>
+            <p>Haciendo realidad la marca Pear y accesorios con el ecosistema <b>theztap</b>.</p>
         </div>
     </div>
 
     <div id="sec-xt" class="section">
         <div class="box-ui">
             <h2>XT Kernel</h2>
-            <p style="font-size: 14px; color: #555;">Haciendo realidad los Pearphones. Desarrollando e investigando el OS basado en arquitectura C++ y el Kernel del Teseracto para satisfacer a todos los usuarios.</p>
+            <p>Arquitectura pura. Investigando el OS para los Pearphones del futuro.</p>
         </div>
     </div>
 </div>
@@ -180,7 +173,6 @@
 <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-database-compat.js"></script>
 
 <script type="text/javascript">
-    // Mismo Firebase Config de Nico
     const firebaseConfig = {
       apiKey: "AIzaSyDtV17bKSfJ_shwkRCxipRoPuxcZNL7o3k",
       authDomain: "pearserver-f8a0e.firebaseapp.com",
@@ -224,7 +216,6 @@
         document.getElementById('tab-' + id).classList.add('active');
     }
 
-    // MONITOR EN EL LOGO DE APPLE - 3 CLICS
     let appleClicks = 0;
     function checkMonitorClicks() {
         appleClicks++;
@@ -237,7 +228,6 @@
         setTimeout(() => appleClicks = 0, 3000);
     }
 
-    // BOTÓN :) ABRE LA VENTANA DE "AQUÍ NO ESTÁ"
     function openMainPopup() {
         document.getElementById('toast-header').innerText = "Aquí no está";
         document.getElementById('toast-body').innerHTML = '<button class="btn-ui" onclick="showMIT()">VER MIT</button><button class="btn-ui" onclick="closeToast()">SALIR</button>';
@@ -245,29 +235,13 @@
     }
 
     function showMIT() {
-        document.getElementById('toast-header').innerText = "LICENCIA MIT";
-        document.getElementById('toast-body').innerHTML = '<div style="font-size:10px; color:#555; text-align:left; margin-bottom:15px; max-height: 150px; overflow-y: auto; padding-right: 5px;">' +
-            'Copyright (c) 2026 Pear Inc. Nico.<br><br>' +
-            'Permission is hereby granted, free of charge, to any person obtaining a copy<br>' +
-            'of this software and associated documentation files (the "Software"), to deal<br>' +
-            'in the Software without restriction, including without limitation the rights<br>' +
-            'to use, copy, modify, merge, publish, distribute, sublicense, and/or sell<br>' +
-            'copies of the Software, and to permit persons to whom the Software is<br>' +
-            'furnished to do so, subject to the following conditions:<br><br>' +
-            'The above copyright notice and this permission notice shall be included in all<br>' +
-            'copies or substantial portions of the Software.<br><br>' +
-            'THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR<br>' +
-            'IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,<br>' +
-            'FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE<br>' +
-            'AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER<br>' +
-            'LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,<br>' +
-            'OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE<br>' +
-            'SOFTWARE.' +
-            '</div><button class="btn-ui" onclick="openMainPopup()">VOLVER</button>';
+        document.getElementById('toast-header').innerText = "MIT LICENSE";
+        document.getElementById('toast-body').innerHTML = '<div style="font-size:10px; color:#666; text-align:left; max-height:150px; overflow-y:auto; margin-bottom:15px;">' +
+            'Copyright (c) 2026 Pear Inc. Nico.<br><br>Permission is hereby granted, free of charge, to any person... (Texto MIT Completo)</div>' +
+            '<button class="btn-ui" onclick="openMainPopup()">VOLVER</button>';
     }
 
     function closeToast() { document.getElementById('toast').style.display = 'none'; }
-
     iniciarCiclo();
 </script>
 </body>
