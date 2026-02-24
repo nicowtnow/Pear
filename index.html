@@ -1,0 +1,274 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pear Inc. - El Futuro que no Prometieron</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap');
+        
+        body { 
+            /* Fondo inspirado en tu iPhone con un toque más abstracto y limpio */
+            background: linear-gradient(to bottom, #87CEEB 0%, #B0E0E6 100%); /* Tonos celestes */
+            background-attachment: fixed;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.4"><circle cx="20" cy="20" r="10" fill="rgba(255,255,255,0.4)"/><circle cx="80" cy="50" r="15" fill="rgba(255,255,255,0.3)"/><circle cx="50" cy="80" r="12" fill="rgba(255,255,255,0.2)"/></svg>');
+            background-size: cover;
+            color: #333; /* Texto más oscuro para el fondo claro */
+            font-family: 'Segoe UI', sans-serif; /* Fuente suave */
+            margin: 0; padding: 0; min-height: 100vh;
+        }
+
+        #navbar {
+            background: rgba(255, 255, 255, 0.7); /* Transparente y glaseado */
+            backdrop-filter: blur(10px); /* Efecto de cristal esmerilado */
+            -webkit-backdrop-filter: blur(10px);
+            height: 50px; border-bottom: 1px solid rgba(255,255,255,0.5);
+            display: flex; align-items: center; padding: 0 10px;
+            position: sticky; top: 0; z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .apple-icon { font-size: 22px; color: #555; margin-right: 15px; cursor: pointer; text-shadow: 0 1px 0 rgba(255,255,255,0.8); }
+        #navbar ul { list-style: none; margin: 0; padding: 0; display: flex; flex: 1; height: 100%; }
+        #navbar li {
+            flex: 1; text-align: center; line-height: 50px;
+            color: #666; font-size: 12px; font-weight: bold; cursor: pointer; 
+            border-right: 1px solid rgba(255,255,255,0.3);
+            text-shadow: 0 1px 0 rgba(255,255,255,0.8);
+            transition: all 0.2s ease-in-out;
+        }
+        #navbar li.active { 
+            background: rgba(255,255,255,0.9); 
+            color: #007aff; /* Azul claro de Frutiger Aero */
+            border-bottom: 2px solid #007aff;
+            box-shadow: inset 0 0 10px rgba(0,122,255,0.2);
+        }
+        #navbar li:hover:not(.active) { background: rgba(255,255,255,0.5); }
+
+        .nav-special { 
+            width: 45px; text-align: center; font-size: 16px; cursor: pointer; 
+            height: 50px; line-height: 50px; border-left: 1px solid rgba(255,255,255,0.3);
+            color: #007aff; font-weight: bold; text-shadow: 0 1px 0 rgba(255,255,255,0.8);
+        }
+        #secret-btn { /* El botón :) */ } 
+
+        #main-container { max-width: 550px; margin: 40px auto; padding: 20px; }
+        
+        .section { display: none; }
+        .section.active { display: block !important; }
+        
+        /* Estilo de cajas con efecto glaseado y borde sutil */
+        .box-ui { 
+            background: rgba(255, 255, 255, 0.7); /* Transparencia */
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.8); /* Borde claro y brillante */
+            padding: 25px; border-radius: 18px; margin-bottom: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.7); /* Brillo y sombra */
+            text-align: center;
+            color: #444; /* Texto más oscuro para contraste */
+            text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+        }
+        .box-ui h2 { color: #007aff; text-shadow: 0 1px 0 rgba(255,255,255,0.7); }
+        .box-ui p { line-height: 1.6; }
+
+        .count-num { 
+            font-size: 60px; font-weight: 700; 
+            color: #007aff; /* Azul vibrante */
+            font-family: 'Segoe UI', sans-serif; 
+            text-shadow: 0 0 10px rgba(0,122,255,0.5), 0 1px 0 rgba(255,255,255,0.7); /* Resplandor y brillo */
+        }
+        
+        /* VENTANA POPUP (TOAST) */
+        #toast {
+            display: none; position: fixed; top: 50%; left: 50%;
+            transform: translate(-50%, -50%); 
+            background: rgba(255, 255, 255, 0.9); /* Casi opaco */
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            color: #333; padding: 30px; border-radius: 20px; z-index: 2000; 
+            border: 1px solid rgba(255,255,255,0.9); 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.9);
+            width: 300px; text-align: center;
+        }
+        #toast-header { font-size: 18px; margin-bottom: 20px; color: #007aff; text-shadow: 0 1px 0 rgba(255,255,255,0.8); }
+        #toast-body p { color: #555; font-size: 13px; line-height: 1.4; }
+
+        .btn-ui { 
+            background: linear-gradient(to bottom, #E0E0E0 0%, #C0C0C0 100%); /* Botón glaseado */
+            color: #333; border: 1px solid rgba(255,255,255,0.7); 
+            padding: 10px 20px; margin: 8px; border-radius: 10px; cursor: pointer; 
+            font-size: 13px; font-weight: bold; text-shadow: 0 1px 0 rgba(255,255,255,0.8);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.7);
+            transition: all 0.2s ease-in-out;
+            width: 80%; /* Para que los botones se vean bien en el popup */
+        }
+        .btn-ui:hover { 
+            background: linear-gradient(to bottom, #F0F0F0 0%, #D0D0D0 100%); 
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.9);
+        }
+
+        footer { 
+            text-align: center; padding: 40px 0; color: #888; font-size: 11px; 
+            pointer-events: none; /* No clickable */
+            text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+        }
+        .tagline { 
+            font-size: 16px; font-weight: bold; margin-bottom: 15px; 
+            color: #007aff; text-shadow: 0 1px 0 rgba(255,255,255,0.7); 
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="toast">
+    <div id="toast-header"></div>
+    <div id="toast-body"></div>
+</div>
+
+<div id="navbar">
+    <div class="apple-icon" onclick="checkMonitorClicks()"></div>
+    <ul>
+        <li id="tab-cydia" class="active" onclick="showSection('cydia')">Cydia</li>
+        <li id="tab-5d" onclick="showSection('5d')">5D</li>
+        <li id="tab-pear" onclick="showSection('pear')">Pear</li>
+        <li id="tab-xt" onclick="showSection('xt')">XT</li>
+    </ul>
+    <div id="secret-btn" class="nav-special" onclick="openMainPopup()">:)</div>
+</div>
+
+<div id="main-container">
+    <p class="tagline">El futuro que no prometieron</p>
+    
+    <div id="sec-cydia" class="section active">
+        <div class="box-ui">
+            <p style="font-size: 12px; color: #666; margin: 0 0 15px 0;">Contador de request desde y hacia Cydia</p>
+            <div id="contador-dinamico" class="count-num">---</div>
+        </div>
+    </div>
+    
+    <div id="sec-5d" class="section">
+        <div class="box-ui">
+            <h2 style="font-size: 20px; margin-top: 0;">MEMORIA 5D</h2>
+            <p style="font-size: 14px; text-align: justify; line-height: 1.5; color: #555;">
+                "La materia es el eco de una dimensión que ya no existe."
+            </p>
+            <p style="font-size: 14px; text-align: justify; line-height: 1.5; color: #555; margin-top: 20px;">
+                Ese momento, el <b>Big Grand Reset</b>, no es el fin del mundo. Es más bien como un cambio de escala. Imagina que llegamos a la dimensión 999,999 y ya no cabe nada más; entonces, todo ese universo colapsa para convertirse en la unidad básica, en el primer "punto" de un nivel superior.
+            </p>
+        </div>
+    </div>
+
+    <div id="sec-pear" class="section">
+        <div class="box-ui">
+            <h2>Pear Inc.</h2>
+            <p style="font-size: 14px; color: #555;">Estamos trabajando en hacer la marca Pear y accesorios realidad con aplicaciones como <b>theztap</b>. Nos enfocamos en unificar hardware y software.</p>
+        </div>
+    </div>
+
+    <div id="sec-xt" class="section">
+        <div class="box-ui">
+            <h2>XT Kernel</h2>
+            <p style="font-size: 14px; color: #555;">Haciendo realidad los Pearphones. Desarrollando e investigando el OS basado en arquitectura C++ y el Kernel del Teseracto para satisfacer a todos los usuarios.</p>
+        </div>
+    </div>
+</div>
+
+<footer>&copy; 2026 Pear Inc. - Nico 2026</footer>
+
+<script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-database-compat.js"></script>
+
+<script type="text/javascript">
+    // Mismo Firebase Config de Nico
+    const firebaseConfig = {
+      apiKey: "AIzaSyDtV17bKSfJ_shwkRCxipRoPuxcZNL7o3k",
+      authDomain: "pearserver-f8a0e.firebaseapp.com",
+      databaseURL: "https://pearserver-f8a0e-default-rtdb.firebaseio.com",
+      projectId: "pearserver-f8a0e",
+      appId: "1:34841932085:web:96610f04b7ae4e8cca9c7c"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const database = firebase.database();
+    const serverRef = database.ref('servidor');
+    const patronSuma = [44, 72, 25, 83];
+
+    let rondasRapidas = 0; let tiempoRestante = 0; let timerInterval; let faseTexto = "";
+
+    serverRef.on('value', (snapshot) => {
+        const data = snapshot.val();
+        if (data) document.getElementById('contador-dinamico').innerText = data.peticiones;
+    });
+
+    function iniciarCiclo() {
+        let tiempoEspera;
+        if (rondasRapidas < 2) { faseTexto = "RS" + (rondasRapidas+1); tiempoEspera = 15000 + Math.random()*15000; }
+        else if (rondasRapidas === 2) { faseTexto = "RS3"; tiempoEspera = 15000 + Math.random()*15000; }
+        else { faseTexto = "RL"; tiempoEspera = 120000; }
+        tiempoRestante = tiempoEspera;
+        if (timerInterval) clearInterval(timerInterval);
+        timerInterval = setInterval(() => { tiempoRestante -= 1000; if (tiempoRestante <= 0) { clearInterval(timerInterval); ejecutarSuma(); } }, 1000);
+    }
+
+    function ejecutarSuma() {
+        serverRef.transaction((d) => { if(d){ let n = parseInt(d.peticiones) + patronSuma[d.index % 4]; if (n >= 5000) n = 277; d.peticiones = n; d.index++; } return d; }, () => { rondasRapidas = (rondasRapidas + 1) % 4; iniciarCiclo(); });
+    }
+
+    function showSection(id) {
+        const sections = document.getElementsByClassName('section');
+        for (let i = 0; i < sections.length; i++) { sections[i].classList.remove('active'); }
+        const tabs = document.querySelectorAll('#navbar li');
+        tabs.forEach(t => t.classList.remove('active'));
+        document.getElementById('sec-' + id).classList.add('active');
+        document.getElementById('tab-' + id).classList.add('active');
+    }
+
+    // MONITOR EN EL LOGO DE APPLE - 3 CLICS
+    let appleClicks = 0;
+    function checkMonitorClicks() {
+        appleClicks++;
+        if(appleClicks >= 3) {
+            let seg = Math.ceil(tiempoRestante/1000);
+            let f = (faseTexto==="RS3") ? "" : faseTexto;
+            alert("PEAR OS MONITOR\n" + f + " " + seg + "s");
+            appleClicks = 0;
+        }
+        setTimeout(() => appleClicks = 0, 3000);
+    }
+
+    // BOTÓN :) ABRE LA VENTANA DE "AQUÍ NO ESTÁ"
+    function openMainPopup() {
+        document.getElementById('toast-header').innerText = "Aquí no está";
+        document.getElementById('toast-body').innerHTML = '<button class="btn-ui" onclick="showMIT()">VER MIT</button><button class="btn-ui" onclick="closeToast()">SALIR</button>';
+        document.getElementById('toast').style.display = 'block';
+    }
+
+    function showMIT() {
+        document.getElementById('toast-header').innerText = "LICENCIA MIT";
+        document.getElementById('toast-body').innerHTML = '<div style="font-size:10px; color:#555; text-align:left; margin-bottom:15px; max-height: 150px; overflow-y: auto; padding-right: 5px;">' +
+            'Copyright (c) 2026 Pear Inc. Nico.<br><br>' +
+            'Permission is hereby granted, free of charge, to any person obtaining a copy<br>' +
+            'of this software and associated documentation files (the "Software"), to deal<br>' +
+            'in the Software without restriction, including without limitation the rights<br>' +
+            'to use, copy, modify, merge, publish, distribute, sublicense, and/or sell<br>' +
+            'copies of the Software, and to permit persons to whom the Software is<br>' +
+            'furnished to do so, subject to the following conditions:<br><br>' +
+            'The above copyright notice and this permission notice shall be included in all<br>' +
+            'copies or substantial portions of the Software.<br><br>' +
+            'THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR<br>' +
+            'IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,<br>' +
+            'FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE<br>' +
+            'AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER<br>' +
+            'LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,<br>' +
+            'OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE<br>' +
+            'SOFTWARE.' +
+            '</div><button class="btn-ui" onclick="openMainPopup()">VOLVER</button>';
+    }
+
+    function closeToast() { document.getElementById('toast').style.display = 'none'; }
+
+    iniciarCiclo();
+</script>
+</body>
+</html>
