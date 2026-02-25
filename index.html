@@ -12,10 +12,9 @@
             background-size: cover;
             color: #333; font-family: 'Segoe UI', sans-serif;
             margin: 0; padding: 0; min-height: 100vh; overflow: hidden;
-            touch-action: pan-y; /* Permite scroll vertical pero controlamos el horizontal */
+            touch-action: pan-y;
         }
 
-        /* NAVBAR ESQUEUOMÓRFICA */
         #navbar {
             background: linear-gradient(to bottom, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.4) 100%);
             backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
@@ -37,10 +36,19 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.2), inset 0 1px 2px white;
         }
 
-        /* CONTENEDOR CON ANIMACIÓN DE BRINCO */
+        /* CONTENEDOR CON ANIMACIÓN Y RELLENO */
         #main-container { 
             max-width: 650px; margin: 20px auto; padding: 15px; 
-            position: relative; z-index: 10; transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            position: relative; z-index: 10; 
+            transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        /* Relleno invisible para alargar el scroll/landscape */
+        .spacer-landscape {
+            height: 300px;
+            width: 100%;
+            background: transparent;
+            pointer-events: none;
         }
 
         .section { display: none; animation: slideIn 0.4s ease; }
@@ -59,12 +67,10 @@
             text-align: center; position: relative;
         }
 
-        /* OPTIMIZACIÓN LANDSCAPE EXTRA */
         @media screen and (orientation: landscape) {
-            #main-container { max-width: 90%; margin: 10px auto; display: flex; justify-content: center; align-items: center; min-height: 60vh; }
-            .box-ui { width: 100%; min-width: 400px; padding: 15px; }
+            #main-container { max-width: 95%; margin: 10px auto; display: flex; flex-direction: column; align-items: center; }
+            .box-ui { width: 80%; padding: 40px; }
             #navbar { height: 45px; }
-            #navbar li { line-height: 35px; }
         }
 
         #bubble-score-container {
@@ -115,12 +121,30 @@
             <p>Skeuomorphism Is Back.</p>
         </div>
     </div>
+    
+    <div class="spacer-landscape"></div>
 </div>
 
 <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-database-compat.js"></script>
 
 <script>
+    // --- GENERADOR DE SONIDO (POP) ---
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    function playPopSound() {
+        const oscillator = audioCtx.createOscillator();
+        const gainNode = audioCtx.createGain();
+        oscillator.type = 'sine';
+        oscillator.frequency.setValueAtTime(600, audioCtx.currentTime);
+        oscillator.frequency.exponentialRampToValueAtTime(100, audioCtx.currentTime + 0.1);
+        gainNode.gain.setValueAtTime(0.2, audioCtx.currentTime);
+        gainNode.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.1);
+        oscillator.connect(gainNode);
+        gainNode.connect(audioCtx.destination);
+        oscillator.start();
+        oscillator.stop(audioCtx.currentTime + 0.1);
+    }
+
     const sections = ['cydia', 'bubbles', '5d', 'pear'];
     let currentIdx = 1;
     let touchStartX = 0;
@@ -128,8 +152,6 @@
     function showSection(idx) {
         currentIdx = idx;
         const container = document.getElementById('main-container');
-        
-        // Efecto de brinco
         container.style.transform = "scale(0.95)";
         setTimeout(() => { container.style.transform = "scale(1)"; }, 200);
 
@@ -139,23 +161,20 @@
         document.querySelectorAll('#navbar li').forEach((t, i) => {
             t.classList.toggle('active', i === idx);
         });
-        
         document.getElementById('bubble-canvas').style.opacity = (idx === 1) ? "1" : "0.3";
     }
 
-    // LÓGICA DE SWIPE (DESLIZAR)
     function handleTouchStart(e) { touchStartX = e.changedTouches[0].screenX; }
     function handleTouchEnd(e) {
         let touchEndX = e.changedTouches[0].screenX;
-        if (touchEndX < touchStartX - 50) { // Deslizar a la izquierda (Siguiente)
+        if (touchEndX < touchStartX - 50) { 
             if (currentIdx < sections.length - 1) showSection(currentIdx + 1);
         }
-        if (touchEndX > touchStartX + 50) { // Deslizar a la derecha (Anterior)
+        if (touchEndX > touchStartX + 50) { 
             if (currentIdx > 0) showSection(currentIdx - 1);
         }
     }
 
-    // MOTOR DE BURBUJAS (IGUAL AL ANTERIOR PERO MÁS FLUIDO)
     const canvas = document.getElementById('bubble-canvas');
     const ctx = canvas.getContext('2d');
     let bubbles = []; let popCount = localStorage.getItem('popCount') || 0;
@@ -190,6 +209,7 @@
     canvas.addEventListener('mousedown', (e) => {
         bubbles.forEach((b, i) => {
             if(Math.sqrt((e.clientX-b.x)**2 + (e.clientY-b.y)**2) < b.radius) {
+                playPopSound(); // Sonido al explotar
                 bubbles.splice(i, 1); popCount++;
                 localStorage.setItem('popCount', popCount);
                 document.getElementById('pop-count').innerText = popCount;
@@ -205,7 +225,6 @@
     for(let i=0; i<15; i++) bubbles.push(new Bubble());
     animate();
 
-    // Firebase Simple
     const firebaseConfig = { databaseURL: "https://pearserver-f8a0e-default-rtdb.firebaseio.com" };
     firebase.initializeApp(firebaseConfig);
     firebase.database().ref('servidor').on('value', (s) => { if(s.val()) document.getElementById('contador-dinamico').innerText = s.val().peticiones; });
