@@ -3,98 +3,106 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pear Inc. - El Futuro que no Prometieron</title>
+    <title>Pear Inc. - Frutiger Aero Edition</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap');
         
         body { 
-            background: linear-gradient(to bottom, #87CEEB 0%, #B0E0E6 100%);
-            background-attachment: fixed;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.4"><circle cx="20" cy="20" r="10" fill="rgba(255,255,255,0.4)"/><circle cx="80" cy="50" r="15" fill="rgba(255,255,255,0.3)"/><circle cx="50" cy="80" r="12" fill="rgba(255,255,255,0.2)"/></svg>');
+            /* Fondo Frutiger Aero Clásico: Naturaleza y optimismo */
+            background: #0078d7 url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=2000') no-repeat center center fixed;
             background-size: cover;
             color: #333;
-            font-family: 'Segoe UI', sans-serif;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
             margin: 0; padding: 0; min-height: 100vh;
-            transition: background 0.5s ease;
+            transition: all 0.5s ease;
         }
 
-        /* Clase para el cambio de fondo en la pestaña de burbujas */
-        body.bubbles-bg {
-            background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=2000') !important;
-            background-size: cover;
-            background-position: center;
-        }
-
+        /* Barra de navegación con brillo de cristal */
         #navbar {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-            height: 50px; border-bottom: 1px solid rgba(255,255,255,0.5);
-            display: flex; align-items: center; padding: 0 10px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.2) 100%);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            height: 60px;
+            border-bottom: 2px solid rgba(255,255,255,0.6);
+            display: flex; align-items: center; padding: 0 15px;
             position: sticky; top: 0; z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .apple-icon { font-size: 22px; color: #555; margin-right: 15px; cursor: pointer; text-shadow: 0 1px 0 rgba(255,255,255,0.8); }
-        #navbar ul { list-style: none; margin: 0; padding: 0; display: flex; flex: 1; height: 100%; }
-        #navbar li {
-            flex: 1; text-align: center; line-height: 50px;
-            color: #666; font-size: 11px; font-weight: bold; cursor: pointer; 
-            border-right: 1px solid rgba(255,255,255,0.3);
-            text-shadow: 0 1px 0 rgba(255,255,255,0.8);
-            transition: all 0.2s ease-in-out;
-        }
-        #navbar li.active { 
-            background: rgba(255,255,255,0.9); 
-            color: #007aff;
-            border-bottom: 2px solid #007aff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
-        #main-container { max-width: 550px; margin: 40px auto; padding: 20px; position: relative; z-index: 10; }
+        .apple-icon { 
+            font-size: 26px; color: #444; margin-right: 20px; cursor: pointer;
+            filter: drop-shadow(0 2px 2px rgba(255,255,255,0.8));
+        }
+
+        #navbar ul { list-style: none; margin: 0; padding: 0; display: flex; flex: 1; height: 100%; }
+
+        /* Botones de la barra estilo "Gel" */
+        #navbar li {
+            flex: 1; text-align: center; line-height: 60px;
+            color: #222; font-size: 13px; font-weight: bold; cursor: pointer;
+            transition: all 0.3s;
+            text-shadow: 0 1px 0 rgba(255,255,255,0.8);
+            border-radius: 10px; margin: 5px;
+        }
+
+        #navbar li:hover {
+            background: rgba(255,255,255,0.4);
+            box-shadow: inset 0 0 10px rgba(255,255,255,0.8);
+        }
+
+        #navbar li.active { 
+            background: linear-gradient(to bottom, #7abcff 0%, #4096ee 50%, #1172d4 51%, #67aeef 100%);
+            color: white;
+            text-shadow: 0 -1px 1px rgba(0,0,0,0.3);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.5);
+            border: 1px solid #0056a3;
+        }
+
+        #main-container { max-width: 600px; margin: 40px auto; padding: 20px; position: relative; z-index: 10; }
+        
         .section { display: none; }
         .section.active { display: block !important; }
         
+        /* Cajas de texto estilo Burbuja / Liquid Glass */
         .box-ui { 
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.8);
-            padding: 25px; border-radius: 18px; margin-bottom: 25px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.7);
-            text-align: center; color: #444;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(12px);
+            border: 2px solid rgba(255, 255, 255, 0.7);
+            padding: 30px; border-radius: 30px; margin-bottom: 25px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15), 
+                        inset 0 10px 20px rgba(255,255,255,0.6),
+                        inset 0 -5px 15px rgba(255,255,255,0.2);
+            text-align: center;
+            position: relative; overflow: hidden;
         }
 
-        .count-num { font-size: 60px; font-weight: 700; color: #007aff; font-family: 'Segoe UI', sans-serif; text-shadow: 0 0 10px rgba(0,122,255,0.3); }
-        
-        /* CANVAS DE BURBUJAS */
+        /* El brillo superior que da volumen */
+        .box-ui::after {
+            content: ""; position: absolute; top: 0; left: 5%; width: 90%; height: 40%;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 100%);
+            border-radius: 40px 40px 100px 100px; pointer-events: none;
+        }
+
+        .count-num { 
+            font-size: 75px; font-weight: 800; 
+            background: linear-gradient(to bottom, #007aff, #00c6ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+
+        /* Canvas de burbujas (siempre visible pero con más brillo en su sección) */
         #bubble-canvas {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            z-index: 1; pointer-events: auto; display: none;
-        }
-        #bubble-canvas.active { display: block; }
-
-        .btn-ui { 
-            background: linear-gradient(to bottom, #E0E0E0 0%, #C0C0C0 100%);
-            color: #333; border: 1px solid rgba(255,255,255,0.7); 
-            padding: 10px 20px; border-radius: 10px; cursor: pointer; 
-            font-size: 13px; font-weight: bold; width: 80%; margin: 8px auto;
+            z-index: 1; pointer-events: auto;
         }
 
-        #toast {
-            display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); 
-            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(15px);
-            padding: 30px; border-radius: 20px; z-index: 2000; border: 1px solid #fff;
-            width: 300px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-
-        footer { text-align: center; padding: 40px 0; color: #888; font-size: 11px; pointer-events: none; }
+        footer { text-align: center; color: white; text-shadow: 0 1px 2px rgba(0,0,0,0.5); font-weight: bold; }
     </style>
 </head>
 <body>
 
 <canvas id="bubble-canvas"></canvas>
-
-<div id="toast">
-    <div id="toast-header"></div>
-    <div id="toast-body"></div>
-</div>
 
 <div id="navbar">
     <div class="apple-icon" onclick="checkMonitorClicks()"></div>
@@ -103,49 +111,43 @@
         <li id="tab-bubbles" onclick="showSection('bubbles')">Bubbles 🫧</li>
         <li id="tab-5d" onclick="showSection('5d')">5D</li>
         <li id="tab-pear" onclick="showSection('pear')">Pear</li>
-        <li id="tab-xt" onclick="showSection('xt')">XT</li>
     </ul>
-    <div id="secret-btn" style="width:45px; text-align:center; cursor:pointer; color:#007aff; font-weight:bold;" onclick="openMainPopup()">:)</div>
+    <div style="width:45px; text-align:center; cursor:pointer; font-size:22px;" onclick="alert('Pear OS :)')">:)</div>
 </div>
 
 <div id="main-container">
     <div id="sec-cydia" class="section active">
         <div class="box-ui">
-            <p style="font-size: 12px; color: #666; margin: 0 0 15px 0;">Contador de request desde y hacia Cydia</p>
+            <h2 style="color: #0056a3;">Cydia Server</h2>
             <div id="contador-dinamico" class="count-num">---</div>
+            <p>Peticiones en tiempo real al teseracto.</p>
         </div>
     </div>
 
-    <div id="sec-bubbles" class="section"></div>
+    <div id="sec-bubbles" class="section">
+        </div>
     
     <div id="sec-5d" class="section">
         <div class="box-ui">
-            <h2 style="font-size: 20px; margin-top: 0;">MEMORIA 5D</h2>
-            <p style="font-size: 14px; text-align: justify; color: #555;">"La materia es el eco de una dimensión que ya no existe."</p>
+            <h2 style="color: #0056a3;">Memoria 5D</h2>
+            <p>"La materia es el eco de una dimensión que ya no existe."</p>
         </div>
     </div>
 
     <div id="sec-pear" class="section">
         <div class="box-ui">
             <h2>Pear Inc.</h2>
-            <p style="font-size: 14px; color: #555;">Unificando hardware y software con theztap.</p>
-        </div>
-    </div>
-
-    <div id="sec-xt" class="section">
-        <div class="box-ui">
-            <h2>XT Kernel</h2>
-            <p style="font-size: 14px; color: #555;">Kernel del Teseracto para Pearphones.</p>
+            <p>Hardware y Software en armonía.</p>
         </div>
     </div>
 </div>
 
-<footer>&copy; 2026 Pear Inc. - Nico 2026</footer>
+<footer>&copy; 2026 Pear Inc. - Nico</footer>
 
 <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-database-compat.js"></script>
 
-<script type="text/javascript">
+<script>
     // --- FIREBASE ---
     const firebaseConfig = {
       apiKey: "AIzaSyDtV17bKSfJ_shwkRCxipRoPuxcZNL7o3k",
@@ -156,63 +158,54 @@
     };
     firebase.initializeApp(firebaseConfig);
     const database = firebase.database();
-    const serverRef = database.ref('servidor');
-    serverRef.on('value', (s) => { if(s.val()) document.getElementById('contador-dinamico').innerText = s.val().peticiones; });
+    database.ref('servidor').on('value', (s) => { if(s.val()) document.getElementById('contador-dinamico').innerText = s.val().peticiones; });
 
-    // --- LÓGICA DE SECCIONES Y FONDO ---
+    // --- PESTAÑAS ---
     function showSection(id) {
         document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
         document.querySelectorAll('#navbar li').forEach(t => t.classList.remove('active'));
         document.getElementById('sec-' + id).classList.add('active');
         document.getElementById('tab-' + id).classList.add('active');
-
-        const canvas = document.getElementById('bubble-canvas');
-        if (id === 'bubbles') {
-            document.body.classList.add('bubbles-bg');
-            canvas.classList.add('active');
-        } else {
-            document.body.classList.remove('bubbles-bg');
-            canvas.classList.remove('active');
-        }
+        
+        // Si no es burbujas, bajamos opacidad del canvas para leer mejor
+        document.getElementById('bubble-canvas').style.opacity = (id === 'bubbles') ? "1" : "0.5";
     }
 
-    // --- MOTOR DE BURBUJAS HIPERREALISTAS ---
+    // --- BURBUJAS HIPERREALISTAS ---
     const canvas = document.getElementById('bubble-canvas');
     const ctx = canvas.getContext('2d');
     let bubbles = [];
-    let particles = []; // Para la animación de explosión
+    let particles = [];
 
     window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
     canvas.width = window.innerWidth; canvas.height = window.innerHeight;
 
     class Bubble {
         constructor() {
-            this.radius = Math.random() * 40 + 35; // Medianas
+            this.radius = Math.random() * 45 + 30;
             this.x = Math.random() * canvas.width;
             this.y = canvas.height + this.radius;
-            this.speedY = Math.random() * 1 + 0.5;
-            this.speedX = Math.random() * 1 - 0.5;
+            this.speedY = Math.random() * 0.7 + 0.3;
+            this.speedX = Math.random() * 0.6 - 0.3;
         }
         draw() {
             ctx.save();
+            // Cuerpo de la burbuja
+            let g = ctx.createRadialGradient(this.x - this.radius/3, this.y - this.radius/3, this.radius/10, this.x, this.y, this.radius);
+            g.addColorStop(0, 'rgba(255, 255, 255, 0.8)');
+            g.addColorStop(0.2, 'rgba(255, 255, 255, 0.4)');
+            g.addColorStop(0.5, 'rgba(173, 216, 230, 0.2)');
+            g.addColorStop(1, 'rgba(255, 255, 255, 0.1)');
+            
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-            
-            // Gradiente Hiperrealista
-            let grad = ctx.createRadialGradient(this.x - this.radius/3, this.y - this.radius/3, this.radius/10, this.x, this.y, this.radius);
-            grad.addColorStop(0, 'rgba(255, 255, 255, 0.7)'); // Brillo principal
-            grad.addColorStop(0.3, 'rgba(255, 255, 255, 0.2)');
-            grad.addColorStop(0.8, 'rgba(173, 216, 230, 0.3)'); // Tinte azulado
-            grad.addColorStop(1, 'rgba(255, 255, 255, 0.1)'); // Borde suave
-            
-            ctx.fillStyle = grad;
+            ctx.fillStyle = g;
             ctx.fill();
             
-            // Brillo especular secundario
-            ctx.beginPath();
-            ctx.arc(this.x + this.radius/2.5, this.y + this.radius/2.5, this.radius/6, 0, Math.PI * 2);
-            ctx.fillStyle = 'rgba(255,255,255,0.2)';
-            ctx.fill();
+            // Borde brillante
+            ctx.strokeStyle = 'rgba(255,255,255,0.4)';
+            ctx.lineWidth = 2;
+            ctx.stroke();
             ctx.restore();
         }
         update() {
@@ -225,54 +218,39 @@
     class Particle {
         constructor(x, y) {
             this.x = x; this.y = y;
-            this.radius = Math.random() * 3;
-            this.speedX = (Math.random() - 0.5) * 8;
-            this.speedY = (Math.random() - 0.5) * 8;
+            this.radius = Math.random() * 4;
+            this.speedX = (Math.random() - 0.5) * 10;
+            this.speedY = (Math.random() - 0.5) * 10;
             this.alpha = 1;
         }
         draw() {
-            ctx.save();
-            ctx.globalAlpha = this.alpha;
-            ctx.beginPath(); ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-            ctx.fillStyle = "white"; ctx.fill();
-            ctx.restore();
+            ctx.fillStyle = `rgba(255,255,255,${this.alpha})`;
+            ctx.beginPath(); ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2); ctx.fill();
         }
-        update() { this.x += this.speedX; this.y += this.speedY; this.alpha -= 0.03; }
+        update() { this.x += this.speedX; this.y += this.speedY; this.alpha -= 0.04; }
     }
 
     function animate() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         bubbles.forEach(b => { b.update(); b.draw(); });
-        particles.forEach((p, i) => { 
-            p.update(); p.draw(); 
-            if (p.alpha <= 0) particles.splice(i, 1);
-        });
+        particles.forEach((p, i) => { p.update(); p.draw(); if(p.alpha<=0) particles.splice(i,1); });
         requestAnimationFrame(animate);
     }
 
     canvas.addEventListener('mousedown', (e) => {
         bubbles.forEach((b, i) => {
-            let dist = Math.sqrt((e.x - b.x)**2 + (e.y - b.y)**2);
-            if (dist < b.radius) {
-                // Crear explosión
-                for(let j=0; j<10; j++) particles.push(new Particle(b.x, b.y));
+            let d = Math.sqrt((e.x-b.x)**2 + (e.y-b.y)**2);
+            if(d < b.radius) {
+                for(let j=0; j<12; j++) particles.push(new Particle(b.x, b.y));
                 bubbles.splice(i, 1);
-                setTimeout(() => bubbles.push(new Bubble()), 1000);
+                setTimeout(() => bubbles.push(new Bubble()), 1500);
             }
         });
     });
 
-    for(let i=0; i<15; i++) bubbles.push(new Bubble());
+    for(let i=0; i<18; i++) bubbles.push(new Bubble());
     animate();
-
-    function openMainPopup() {
-        document.getElementById('toast-header').innerText = "Pear OS";
-        document.getElementById('toast-body').innerHTML = '<button class="btn-ui" onclick="showMIT()">VER MIT</button><button class="btn-ui" onclick="closeToast()">SALIR</button>';
-        document.getElementById('toast').style.display = 'block';
-    }
-    function closeToast() { document.getElementById('toast').style.display = 'none'; }
-    function showMIT() { alert("Licencia MIT - Pear Inc."); }
-    function checkMonitorClicks() { alert("Monitor Activo"); }
+    function checkMonitorClicks() { alert("Pear Monitor: 2°C afuera, pero aquí está el futuro."); }
 </script>
 </body>
 </html>
