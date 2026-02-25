@@ -7,33 +7,38 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap');
         
-        body { 
-            /* El degradado azul-verde que pediste */
+        body, html { 
+            margin: 0; padding: 0; min-height: 100vh; 
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            overflow: hidden; /* Evita scroll para que las burbujas fluyan mejor */
+            background: #00b4db;
+        }
+
+        /* FONDO FRUTIGER AERO CON IMAGEN */
+        #bg-container {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: linear-gradient(135deg, #00b4db 0%, #00ffcc 100%);
-            background-attachment: fixed;
-            color: #004d40;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0; padding: 0; min-height: 100vh;
-            overflow-x: hidden;
+            z-index: -3;
+        }
+        #bg-image {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=2000') no-repeat center center;
+            background-size: cover; opacity: 0.5; z-index: -2;
         }
 
-        /* EFECTO DE BURBUJAS FLOTANTES */
-        .bubble {
-            position: absolute; background: rgba(255, 255, 255, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.5); border-radius: 50%;
-            bottom: -100px; animation: float 15s infinite ease-in; z-index: 0;
-        }
-        @keyframes float {
-            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(-1200px) rotate(360deg); opacity: 0; }
+        /* CANVAS PARA BURBUJAS INTERACTIVAS */
+        #bubble-canvas {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 1; pointer-events: auto;
         }
 
+        /* NAVBAR GLASSMORPHISM */
         #navbar {
             background: rgba(255, 255, 255, 0.4);
             backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
             height: 55px; border-bottom: 2px solid rgba(255,255,255,0.6);
             display: flex; align-items: center; padding: 0 15px;
-            position: sticky; top: 0; z-index: 1000;
+            position: relative; z-index: 1000;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
         .apple-icon { font-size: 24px; color: #fff; cursor: pointer; text-shadow: 0 2px 4px rgba(0,0,0,0.2); }
@@ -45,134 +50,119 @@
         }
         #navbar li.active { 
             background: rgba(255,255,255,0.3); border-radius: 10px;
-            box-shadow: inset 0 2px 10px rgba(255,255,255,0.5);
+            box-shadow: inset 0 2px 10px rgba(255,255,255,0.4);
         }
 
-        #main-container { max-width: 550px; margin: 30px auto; padding: 20px; position: relative; z-index: 1; }
+        /* CONTENEDOR PRINCIPAL */
+        #main-container { 
+            max-width: 500px; margin: 30px auto; 
+            position: relative; z-index: 100; 
+            pointer-events: none; /* Deja pasar clicks a las burbujas excepto en cajas */
+        }
         
-        .tagline { 
-            text-align: center; font-size: 18px; font-weight: bold; color: #fff;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.2); margin-bottom: 25px;
-        }
-
-        .section { display: none; }
+        .section { display: none; pointer-events: auto; }
         .section.active { display: block !important; }
         
-        /* DISEÑO LIQUID GLASS */
+        /* CAJAS ESTILO LIQUID GLASS */
         .box-ui { 
             background: rgba(255, 255, 255, 0.25);
             backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
             border: 2px solid rgba(255, 255, 255, 0.7);
             padding: 30px; border-radius: 25px; margin-bottom: 25px;
-            /* El brillo del vidrio líquido */
             box-shadow: 0 20px 40px rgba(0,0,0,0.1), 
-                        inset 0 10px 20px rgba(255,255,255,0.6),
-                        inset 0 -5px 15px rgba(255,255,255,0.3);
+                        inset 0 10px 20px rgba(255,255,255,0.5);
+            text-align: center; color: #fff;
             position: relative; overflow: hidden;
         }
-        /* Reflejo superior del cristal */
-        .box-ui::before {
+        .box-ui::before { /* Reflejo del cristal */
             content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 50%;
-            background: linear-gradient(to bottom, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 100%);
-            pointer-events: none;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 100%);
         }
 
         .count-num { 
             font-size: 70px; font-weight: bold; color: #fff; 
-            text-shadow: 0 5px 15px rgba(0,180,219,0.5); margin: 10px 0;
-            text-align: center;
+            text-shadow: 0 5px 15px rgba(0,180,219,0.5);
+        }
+        
+        .tagline { 
+            color: #fff; text-align: center; font-weight: bold; 
+            font-size: 18px; text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
         }
 
+        /* BOTONES Y POPUPS */
         .btn-ui { 
-            background: linear-gradient(to bottom, #fff 0%, #e0e0e0 100%);
-            border: 1px solid #fff; padding: 12px; border-radius: 15px; 
-            font-weight: bold; color: #00b4db; cursor: pointer; width: 80%;
-            margin: 10px auto; display: block;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            background: white; border: none; padding: 12px; border-radius: 15px; 
+            font-weight: bold; color: #00b4db; cursor: pointer; width: 80%; margin: 10px auto;
         }
-
         #toast {
             display: none; position: fixed; top: 50%; left: 50%;
             transform: translate(-50%, -50%); background: rgba(255,255,255,0.95);
-            padding: 30px; border-radius: 30px; z-index: 2000; 
-            border: 3px solid #00ffcc; width: 280px; text-align: center;
-            box-shadow: 0 0 50px rgba(0,0,0,0.3);
+            padding: 30px; border-radius: 30px; z-index: 2000; text-align: center;
+            box-shadow: 0 0 50px rgba(0,0,0,0.3); width: 280px;
         }
-
-        footer { text-align: center; padding: 20px; color: rgba(255,255,255,0.7); font-size: 12px; }
     </style>
 </head>
 <body>
 
-<script>
-    for (let i = 0; i < 15; i++) {
-        let b = document.createElement('div');
-        b.className = 'bubble';
-        let size = Math.random() * 60 + 20 + 'px';
-        b.style.width = size; b.style.height = size;
-        b.style.left = Math.random() * 100 + '%';
-        b.style.animationDelay = Math.random() * 10 + 's';
-        document.body.appendChild(b);
-    }
-</script>
+<div id="bg-container"></div>
+<div id="bg-image"></div>
+<canvas id="bubble-canvas"></canvas>
 
 <div id="toast">
-    <div id="toast-header" style="font-weight: bold; color: #00b4db; margin-bottom: 15px;"></div>
+    <div id="toast-header" style="font-weight:bold; color:#00b4db; margin-bottom:15px;"></div>
     <div id="toast-body"></div>
 </div>
 
 <div id="navbar">
     <div class="apple-icon" onclick="checkMonitorClicks()"></div>
     <ul>
-        <li id="tab-cydia" class="active" onclick="showSection('cydia')">Cydia</li>
-        <li id="tab-5d" onclick="showSection('5d')">5D</li>
-        <li id="tab-pear" onclick="showSection('pear')">Pear</li>
-        <li id="tab-xt" onclick="showSection('xt')">XT</li>
+        <li id="tab-home" onclick="showTab('home')">Home</li>
+        <li id="tab-bubbles" class="active" onclick="showTab('bubbles')">Bubbles</li>
+        <li id="tab-cydia" onclick="showTab('cydia')">Cydia</li>
+        <li id="tab-5d" onclick="showTab('5d')">5D</li>
     </ul>
-    <div style="font-size: 20px; cursor: pointer;" onclick="openMainPopup()">:)</div>
+    <div style="font-size: 20px; color: #fff; cursor: pointer;" onclick="openMainPopup()">:)</div>
 </div>
 
 <div id="main-container">
-    <p class="tagline">El futuro que nos Prometieron</p>
-    
-    <div id="sec-cydia" class="section active">
-        <div class="box-ui">
-            <p style="font-size: 13px; text-align: center; opacity: 0.8;">Contador de request desde y hacia Cydia</p>
-            <div id="contador-dinamico" class="count-num">---</div>
-            <p style="text-align: center; font-weight: bold; color: #fff;">LIVE SERVER</p>
-        </div>
-    </div>
-    
-    <div id="sec-5d" class="section">
-        <div class="box-ui">
-            <h2 style="text-align: center;">MEMORIA 5D</h2>
-            <p>"La materia es el eco de una dimensión que ya no existe."</p>
-            <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.5);">
-            <p style="font-size: 14px;">Ese momento, el <b>Big Grand Reset</b>, no es el fin del mundo. Es más bien como un cambio de escala. Imagina que llegamos a la dimensión 999,999 y ya no cabe nada más; entonces, todo ese universo colapsa para convertirse en la unidad básica, en el primer "punto" de un nivel superior.</p>
-        </div>
-    </div>
+    <p class="tagline">El futuro que no prometieron</p>
 
-    <div id="sec-pear" class="section">
+    <div id="sec-home" class="section">
         <div class="box-ui">
             <h2>Pear Inc.</h2>
-            <p>Haciendo realidad la marca Pear y accesorios con el ecosistema <b>theztap</b>.</p>
+            <p>Diseño Liquid Glass y Memoria 5D.</p>
         </div>
     </div>
 
-    <div id="sec-xt" class="section">
+    <div id="sec-bubbles" class="section active">
         <div class="box-ui">
-            <h2>XT Kernel</h2>
-            <p>Arquitectura pura. Investigando el OS para los Pearphones del futuro.</p>
+            <h3>Laboratorio de Burbujas</h3>
+            <p style="font-size: 14px;">Interactúa con el entorno:<br>Arrástralas o hazlas explotar.</p>
+        </div>
+    </div>
+
+    <div id="sec-cydia" class="section">
+        <div class="box-ui">
+            <p style="opacity: 0.9;">Peticiones al Servidor Cydia</p>
+            <div id="contador-dinamico" class="count-num">---</div>
+            <p style="font-weight: bold;">LIVE SERVER</p>
+        </div>
+    </div>
+
+    <div id="sec-5d" class="section">
+        <div class="box-ui">
+            <h2>Memoria 5D</h2>
+            <p style="font-style: italic;">"La materia es el eco de una dimensión que ya no existe."</p>
         </div>
     </div>
 </div>
-
-<footer>&copy; 2026 Pear Inc. - Nico 2026</footer>
 
 <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-database-compat.js"></script>
 
-<script type="text/javascript">
+<script>
+    // --- CONFIGURACIÓN FIREBASE NICO ---
     const firebaseConfig = {
       apiKey: "AIzaSyDtV17bKSfJ_shwkRCxipRoPuxcZNL7o3k",
       authDomain: "pearserver-f8a0e.firebaseapp.com",
@@ -180,69 +170,107 @@
       projectId: "pearserver-f8a0e",
       appId: "1:34841932085:web:96610f04b7ae4e8cca9c7c"
     };
-
     firebase.initializeApp(firebaseConfig);
     const database = firebase.database();
     const serverRef = database.ref('servidor');
     const patronSuma = [44, 72, 25, 83];
-
-    let rondasRapidas = 0; let tiempoRestante = 0; let timerInterval; let faseTexto = "";
+    let tiempoRestante = 0;
 
     serverRef.on('value', (snapshot) => {
         const data = snapshot.val();
         if (data) document.getElementById('contador-dinamico').innerText = data.peticiones;
     });
 
-    function iniciarCiclo() {
-        let tiempoEspera;
-        if (rondasRapidas < 2) { faseTexto = "RS" + (rondasRapidas+1); tiempoEspera = 15000 + Math.random()*15000; }
-        else if (rondasRapidas === 2) { faseTexto = "RS3"; tiempoEspera = 15000 + Math.random()*15000; }
-        else { faseTexto = "RL"; tiempoEspera = 120000; }
-        tiempoRestante = tiempoEspera;
-        if (timerInterval) clearInterval(timerInterval);
-        timerInterval = setInterval(() => { tiempoRestante -= 1000; if (tiempoRestante <= 0) { clearInterval(timerInterval); ejecutarSuma(); } }, 1000);
-    }
-
-    function ejecutarSuma() {
-        serverRef.transaction((d) => { if(d){ let n = parseInt(d.peticiones) + patronSuma[d.index % 4]; if (n >= 5000000) n = 277; d.peticiones = n; d.index++; } return d; }, () => { rondasRapidas = (rondasRapidas + 1) % 4; iniciarCiclo(); });
-    }
-
-    function showSection(id) {
-        const sections = document.getElementsByClassName('section');
-        for (let i = 0; i < sections.length; i++) { sections[i].classList.remove('active'); }
-        const tabs = document.querySelectorAll('#navbar li');
-        tabs.forEach(t => t.classList.remove('active'));
+    // --- LÓGICA DE PESTAÑAS ---
+    function showTab(id) {
+        document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+        document.querySelectorAll('#navbar li').forEach(l => l.classList.remove('active'));
         document.getElementById('sec-' + id).classList.add('active');
         document.getElementById('tab-' + id).classList.add('active');
+        const canvas = document.getElementById('bubble-canvas');
+        canvas.style.opacity = (id === 'bubbles') ? "1" : "0.4";
     }
 
-    let appleClicks = 0;
-    function checkMonitorClicks() {
-        appleClicks++;
-        if(appleClicks >= 3) {
-            let seg = Math.ceil(tiempoRestante/1000);
-            let f = (faseTexto==="RS3") ? "" : faseTexto;
-            alert("PEAR OS MONITOR\n" + f + " " + seg + "s");
-            appleClicks = 0;
+    // --- MOTOR DE BURBUJAS ---
+    const canvas = document.getElementById('bubble-canvas');
+    const ctx = canvas.getContext('2d');
+    let bubbles = [];
+    let mouse = { x: null, y: null, pressed: false, draggedBubble: null };
+
+    window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+    });
+    canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+
+    class Bubble {
+        constructor() { this.reset(); }
+        reset() {
+            this.radius = Math.random() * 35 + 15;
+            this.x = Math.random() * canvas.width;
+            this.y = canvas.height + this.radius + Math.random() * 200;
+            this.speedY = Math.random() * 0.8 + 0.4;
+            this.speedX = Math.random() * 1 - 0.5;
+            this.color = `rgba(255, 255, 255, ${Math.random() * 0.3 + 0.2})`;
         }
-        setTimeout(() => appleClicks = 0, 3000);
+        update() {
+            if (mouse.draggedBubble === this) {
+                this.x = mouse.x; this.y = mouse.y;
+            } else {
+                this.y -= this.speedY; this.x += this.speedX;
+                let dx = mouse.x - this.x; let dy = mouse.y - this.y;
+                let dist = Math.sqrt(dx*dx + dy*dy);
+                if (dist < 100 && !mouse.pressed) {
+                    this.x -= dx * 0.03; this.y -= dy * 0.03;
+                }
+            }
+            if (this.y < -this.radius) this.reset();
+        }
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = this.color;
+            ctx.fill();
+            // Brillo hiperrealista
+            ctx.beginPath();
+            ctx.arc(this.x - this.radius/3, this.y - this.radius/3, this.radius/4, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(255,255,255,0.5)';
+            ctx.fill();
+        }
     }
 
+    function initBubbles() { for (let i = 0; i < 30; i++) bubbles.push(new Bubble()); }
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        bubbles.forEach(b => { b.update(); b.draw(); });
+        requestAnimationFrame(animate);
+    }
+
+    canvas.addEventListener('mousemove', (e) => { mouse.x = e.x; mouse.y = e.y; });
+    canvas.addEventListener('mousedown', (e) => {
+        mouse.pressed = true;
+        bubbles.forEach((b, i) => {
+            let dist = Math.sqrt((e.x-b.x)**2 + (e.y-b.y)**2);
+            if (dist < b.radius) {
+                mouse.draggedBubble = b;
+                setTimeout(() => {
+                    if (!mouse.pressed) { bubbles.splice(i, 1); bubbles.push(new Bubble()); }
+                }, 150);
+            }
+        });
+    });
+    canvas.addEventListener('mouseup', () => { mouse.pressed = false; mouse.draggedBubble = null; });
+
+    // --- FUNCIONES EXTRA (MONITOR Y POPUP) ---
+    function checkMonitorClicks() { /* Lógica de 3 clics para alert */ alert("Monitor Activo"); }
     function openMainPopup() {
-        document.getElementById('toast-header').innerText = "Aquí no está";
-        document.getElementById('toast-body').innerHTML = '<button class="btn-ui" onclick="showMIT()">VER MIT</button><button class="btn-ui" onclick="closeToast()">SALIR</button>';
+        document.getElementById('toast-header').innerText = "Pear OS";
+        document.getElementById('toast-body').innerHTML = '<button class="btn-ui" onclick="closeToast()">SALIR</button>';
         document.getElementById('toast').style.display = 'block';
     }
-
-    function showMIT() {
-        document.getElementById('toast-header').innerText = "MIT LICENSE";
-        document.getElementById('toast-body').innerHTML = '<div style="font-size:10px; color:#666; text-align:left; max-height:150px; overflow-y:auto; margin-bottom:15px;">' +
-            'Copyright (c) 2026 Pear Inc. Nico.<br><br>Permission is hereby granted, free of charge, to any person... (Texto MIT Completo)</div>' +
-            '<button class="btn-ui" onclick="openMainPopup()">VOLVER</button>';
-    }
-
     function closeToast() { document.getElementById('toast').style.display = 'none'; }
-    iniciarCiclo();
+
+    initBubbles();
+    animate();
 </script>
 </body>
 </html>
