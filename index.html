@@ -3,153 +3,116 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Pear Inc. - Frutiger Aero Edition</title>
+    <title>Pear Inc. - Liquid Glass OS</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap');
         
         body { 
             background: #0078d7 url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=2000') no-repeat center center fixed;
             background-size: cover;
-            color: #333;
-            font-family: 'Segoe UI', Tahoma, sans-serif;
-            margin: 0; padding: 0; min-height: 100vh;
-            overflow: hidden; /* Importante para el modo landscape en iPhone */
+            color: #333; font-family: 'Segoe UI', sans-serif;
+            margin: 0; padding: 0; min-height: 100vh; overflow: hidden;
+            touch-action: pan-y; /* Permite scroll vertical pero controlamos el horizontal */
         }
 
         /* NAVBAR ESQUEUOMÓRFICA */
         #navbar {
-            background: linear-gradient(to bottom, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.5) 50%, rgba(240,240,240,0.3) 100%);
+            background: linear-gradient(to bottom, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.4) 100%);
             backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
-            height: 50px; border-bottom: 2px solid rgba(255,255,255,0.7);
+            height: 55px; border-bottom: 2px solid rgba(255,255,255,0.8);
             display: flex; align-items: center; padding: 0 15px;
             position: sticky; top: 0; z-index: 1000;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
-        #navbar ul { list-style: none; margin: 0; padding: 0; display: flex; flex: 1; height: 100%; }
-
+        #navbar ul { list-style: none; margin: 0; padding: 0; display: flex; flex: 1; }
         #navbar li {
-            flex: 1; text-align: center; line-height: 50px;
+            flex: 1; text-align: center; line-height: 45px;
             color: #1a1a1a; font-size: 11px; font-weight: bold; cursor: pointer;
-            text-shadow: 0 1px 1px rgba(255,255,255,0.8);
-            border-radius: 8px; margin: 4px; border: 1px solid transparent;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         #navbar li.active { 
             background: linear-gradient(to bottom, #4facfe 0%, #00f2fe 100%);
-            color: white; border: 1px solid #00c6ff;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.4);
-            box-shadow: inset 0 1px 2px rgba(255,255,255,0.8), 0 2px 4px rgba(0,0,0,0.2);
+            color: white; border-radius: 12px; transform: scale(1.1);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2), inset 0 1px 2px white;
         }
 
-        /* CONTENEDOR LANDSCAPE OPTIMIZADO */
+        /* CONTENEDOR CON ANIMACIÓN DE BRINCO */
         #main-container { 
-            max-width: 600px; margin: 20px auto; padding: 15px; 
-            position: relative; z-index: 10; 
+            max-width: 650px; margin: 20px auto; padding: 15px; 
+            position: relative; z-index: 10; transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
 
-        /* CAJAS CON VOLUMEN 3D */
+        .section { display: none; animation: slideIn 0.4s ease; }
+        .section.active { display: block !important; }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         .box-ui { 
-            background: rgba(255, 255, 255, 0.4);
-            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-            border: 2px solid rgba(255, 255, 255, 0.9);
-            padding: 20px; border-radius: 25px; margin-bottom: 20px;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2), inset 0 10px 15px rgba(255,255,255,0.6);
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+            border: 2px solid white; padding: 30px; border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2), inset 0 10px 20px rgba(255,255,255,0.5);
             text-align: center; position: relative;
         }
 
-        .box-ui::after {
-            content: ""; position: absolute; top: 2px; left: 10%; width: 80%; height: 35%;
-            background: linear-gradient(to bottom, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 100%);
-            border-radius: 20px 20px 50px 50px;
-        }
-
-        /* CONTADOR DE BURBUJAS */
-        #bubble-score-container {
-            position: fixed; bottom: 20px; right: 20px;
-            background: linear-gradient(135deg, #72c6ef 0%, #004e92 100%);
-            padding: 10px 20px; border-radius: 50px; color: white;
-            font-weight: bold; font-size: 18px; z-index: 1000;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3), inset 0 2px 5px rgba(255,255,255,0.5);
-            border: 2px solid white;
-        }
-
-        .section { display: none; }
-        .section.active { display: block !important; }
-        
-        #bubble-canvas {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            z-index: 1; pointer-events: auto;
-        }
-
-        /* AJUSTES PARA IPHONE LANDSCAPE */
+        /* OPTIMIZACIÓN LANDSCAPE EXTRA */
         @media screen and (orientation: landscape) {
-            #main-container { max-width: 80%; margin: 10px auto; display: flex; gap: 10px; }
-            .box-ui { flex: 1; margin-bottom: 0; padding: 10px; }
-            .count-num { font-size: 40px !important; }
+            #main-container { max-width: 90%; margin: 10px auto; display: flex; justify-content: center; align-items: center; min-height: 60vh; }
+            .box-ui { width: 100%; min-width: 400px; padding: 15px; }
+            #navbar { height: 45px; }
+            #navbar li { line-height: 35px; }
         }
 
-        .btn-ui { 
-            background: linear-gradient(to bottom, #ffffff 0%, #e0e0e0 100%);
-            border: 1px solid #ccc; padding: 10px; border-radius: 12px;
-            font-weight: bold; cursor: pointer; width: 100%; margin: 5px 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        #bubble-score-container {
+            position: fixed; bottom: 20px; left: 20px;
+            background: rgba(255,255,255,0.8); padding: 10px 20px;
+            border-radius: 50px; font-weight: bold; border: 2px solid #00f2fe;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 1000;
         }
 
-        #toast {
-            display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            background: rgba(255,255,255,0.95); padding: 25px; border-radius: 20px;
-            z-index: 2000; width: 280px; text-align: center; border: 1px solid #fff;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
-        }
+        #bubble-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
     </style>
 </head>
-<body>
+<body ontouchstart="handleTouchStart(event)" ontouchend="handleTouchEnd(event)">
 
 <canvas id="bubble-canvas"></canvas>
 
-<div id="bubble-score-container">
-    🫧 <span id="pop-count">0</span>
-</div>
-
-<div id="toast">
-    <div id="toast-header" style="color:#007aff; font-weight:bold; margin-bottom:10px;"></div>
-    <div id="toast-body"></div>
-</div>
+<div id="bubble-score-container">🫧 Pops: <span id="pop-count">0</span></div>
 
 <div id="navbar">
-    <div style="font-size:20px; margin-right:10px; cursor:pointer;" onclick="alert('Pear OS Monitor')"></div>
+    <div onclick="alert('Pear OS')" style="cursor:pointer; margin-right:10px;"></div>
     <ul>
-        <li id="tab-cydia" onclick="showSection('cydia')">Cydia</li>
-        <li id="tab-bubbles" class="active" onclick="showSection('bubbles')">Bubbles 🫧</li>
-        <li id="tab-5d" onclick="showSection('5d')">5D</li>
-        <li id="tab-pear" onclick="showSection('pear')">Pear</li>
+        <li id="tab-cydia" onclick="showSection(0)">Cydia</li>
+        <li id="tab-bubbles" class="active" onclick="showSection(1)">Bubbles</li>
+        <li id="tab-5d" onclick="showSection(2)">5D</li>
+        <li id="tab-pear" onclick="showSection(3)">Pear</li>
     </ul>
-    <div style="font-size:18px; cursor:pointer; color:#007aff;" onclick="openMIT()">:)</div>
+    <div style="color:#007aff; cursor:pointer;" onclick="openMIT()">:)</div>
 </div>
 
 <div id="main-container">
-    <div id="sec-cydia" class="section">
+    <div id="sec-0" class="section">
         <div class="box-ui">
-            <p style="font-size:10px; font-weight:bold;">CYDIA REQUESTS</p>
-            <div id="contador-dinamico" style="font-size:50px; font-weight:800; color:#007aff;">---</div>
+            <h3>Cydia Network</h3>
+            <div id="contador-dinamico" style="font-size:60px; font-weight:800; color:#007aff;">---</div>
         </div>
     </div>
-
-    <div id="sec-bubbles" class="section active">
+    <div id="sec-1" class="section active">
         </div>
-    
-    <div id="sec-5d" class="section">
+    <div id="sec-2" class="section">
         <div class="box-ui">
-            <h2 style="font-size:16px;">Memoria 5D</h2>
-            <p style="font-size:12px;">"La materia es el eco de una dimensión pasada."</p>
+            <h2>Memoria 5D</h2>
+            <p>"La materia es el eco de una dimensión pasada." - Nico</p>
         </div>
     </div>
-
-    <div id="sec-pear" class="section">
+    <div id="sec-3" class="section">
         <div class="box-ui">
-            <h2 style="font-size:16px;">Pear Inc.</h2>
-            <p style="font-size:11px;">Hardware y Software Skeuomorphic.</p>
+            <h2>Pear Inc.</h2>
+            <p>Skeuomorphism Is Back.</p>
         </div>
     </div>
 </div>
@@ -158,109 +121,91 @@
 <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-database-compat.js"></script>
 
 <script>
-    // --- LÓGICA DE PESTAÑAS Y SCORE ---
-    let popCount = localStorage.getItem('popCount') || 0;
-    document.getElementById('pop-count').innerText = popCount;
+    const sections = ['cydia', 'bubbles', '5d', 'pear'];
+    let currentIdx = 1;
+    let touchStartX = 0;
 
-    function showSection(id) {
-        document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-        document.querySelectorAll('#navbar li').forEach(t => t.classList.remove('active'));
-        document.getElementById('sec-' + id).classList.add('active');
-        document.getElementById('tab-' + id).classList.add('active');
-        document.getElementById('bubble-canvas').style.opacity = (id === 'bubbles') ? "1" : "0.3";
+    function showSection(idx) {
+        currentIdx = idx;
+        const container = document.getElementById('main-container');
+        
+        // Efecto de brinco
+        container.style.transform = "scale(0.95)";
+        setTimeout(() => { container.style.transform = "scale(1)"; }, 200);
+
+        document.querySelectorAll('.section').forEach((s, i) => {
+            s.classList.toggle('active', i === idx);
+        });
+        document.querySelectorAll('#navbar li').forEach((t, i) => {
+            t.classList.toggle('active', i === idx);
+        });
+        
+        document.getElementById('bubble-canvas').style.opacity = (idx === 1) ? "1" : "0.3";
     }
 
-    // --- MOTOR DE BURBUJAS 2D HIPERREALISTA ---
+    // LÓGICA DE SWIPE (DESLIZAR)
+    function handleTouchStart(e) { touchStartX = e.changedTouches[0].screenX; }
+    function handleTouchEnd(e) {
+        let touchEndX = e.changedTouches[0].screenX;
+        if (touchEndX < touchStartX - 50) { // Deslizar a la izquierda (Siguiente)
+            if (currentIdx < sections.length - 1) showSection(currentIdx + 1);
+        }
+        if (touchEndX > touchStartX + 50) { // Deslizar a la derecha (Anterior)
+            if (currentIdx > 0) showSection(currentIdx - 1);
+        }
+    }
+
+    // MOTOR DE BURBUJAS (IGUAL AL ANTERIOR PERO MÁS FLUIDO)
     const canvas = document.getElementById('bubble-canvas');
     const ctx = canvas.getContext('2d');
-    let bubbles = [];
-    let particles = [];
+    let bubbles = []; let popCount = localStorage.getItem('popCount') || 0;
+    document.getElementById('pop-count').innerText = popCount;
 
     window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
     canvas.width = window.innerWidth; canvas.height = window.innerHeight;
 
     class Bubble {
-        constructor() {
+        constructor() { this.reset(); }
+        reset() {
             this.radius = Math.random() * 40 + 30;
             this.x = Math.random() * canvas.width;
             this.y = canvas.height + this.radius;
-            this.speedY = Math.random() * 0.8 + 0.4;
-            this.speedX = Math.random() * 0.4 - 0.2;
+            this.speedY = Math.random() * 1 + 0.5;
         }
         draw() {
-            ctx.save();
-            let g = ctx.createRadialGradient(this.x - this.radius/3, this.y - this.radius/3, this.radius/10, this.x, this.y, this.radius);
-            g.addColorStop(0, 'rgba(255, 255, 255, 0.9)');
-            g.addColorStop(0.3, 'rgba(255, 255, 255, 0.3)');
-            g.addColorStop(0.6, 'rgba(173, 216, 230, 0.3)');
-            g.addColorStop(1, 'rgba(255, 255, 255, 0.15)');
-            
-            ctx.beginPath(); ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-            ctx.fillStyle = g; ctx.fill();
-            ctx.strokeStyle = 'rgba(255,255,255,0.5)';
-            ctx.lineWidth = 1.5; ctx.stroke();
-            ctx.restore();
+            ctx.beginPath(); ctx.arc(this.x, this.y, this.radius, 0, Math.PI*2);
+            let g = ctx.createRadialGradient(this.x-10, this.y-10, 5, this.x, this.y, this.radius);
+            g.addColorStop(0, 'white'); g.addColorStop(1, 'rgba(173,216,230,0.3)');
+            ctx.fillStyle = g; ctx.fill(); ctx.strokeStyle = "rgba(255,255,255,0.5)"; ctx.stroke();
         }
-        update() {
-            this.y -= this.speedY; this.x += this.speedX;
-            if (this.y < -this.radius) this.y = canvas.height + this.radius;
-        }
-    }
-
-    class Particle {
-        constructor(x, y) {
-            this.x = x; this.y = y;
-            this.radius = Math.random() * 4;
-            this.speedX = (Math.random() - 0.5) * 12;
-            this.speedY = (Math.random() - 0.5) * 12;
-            this.alpha = 1;
-        }
-        draw() {
-            ctx.fillStyle = `rgba(255,255,255,${this.alpha})`;
-            ctx.beginPath(); ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2); ctx.fill();
-        }
-        update() { this.x += this.speedX; this.y += this.speedY; this.alpha -= 0.05; }
+        update() { this.y -= this.speedY; if(this.y < -this.radius) this.reset(); }
     }
 
     function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.clearRect(0,0,canvas.width, canvas.height);
         bubbles.forEach(b => { b.update(); b.draw(); });
-        particles.forEach((p, i) => { p.update(); p.draw(); if(p.alpha<=0) particles.splice(i,1); });
         requestAnimationFrame(animate);
     }
 
     canvas.addEventListener('mousedown', (e) => {
         bubbles.forEach((b, i) => {
-            let d = Math.sqrt((e.clientX-b.x)**2 + (e.clientY-b.y)**2);
-            if(d < b.radius) {
-                for(let j=0; j<15; j++) particles.push(new Particle(b.x, b.y));
-                bubbles.splice(i, 1);
-                popCount++;
+            if(Math.sqrt((e.clientX-b.x)**2 + (e.clientY-b.y)**2) < b.radius) {
+                bubbles.splice(i, 1); popCount++;
                 localStorage.setItem('popCount', popCount);
                 document.getElementById('pop-count').innerText = popCount;
-                setTimeout(() => bubbles.push(new Bubble()), 1000);
+                setTimeout(() => bubbles.push(new Bubble()), 800);
             }
         });
     });
 
-    // --- MIT LICENSE ---
     function openMIT() {
-        document.getElementById('toast-header').innerText = "MIT LICENSE";
-        document.getElementById('toast-body').innerHTML = `
-            <div style="font-size:9px; text-align:left; max-height:150px; overflow-y:auto;">
-                Copyright (c) 2026 Pear Inc. Nico.<br><br>
-                Permission is hereby granted, free of charge, to any person obtaining a copy of this software...
-                [Contenido MIT Completo]
-            </div>
-            <button class="btn-ui" onclick="document.getElementById('toast').style.display='none'">CERRAR</button>
-        `;
-        document.getElementById('toast').style.display = 'block';
+        alert("MIT License\nCopyright (c) 2026 Pear Inc. Nico.\nPermission is hereby granted...");
     }
 
     for(let i=0; i<15; i++) bubbles.push(new Bubble());
     animate();
 
-    // Firebase (Opcional, solo lectura del contador global)
+    // Firebase Simple
     const firebaseConfig = { databaseURL: "https://pearserver-f8a0e-default-rtdb.firebaseio.com" };
     firebase.initializeApp(firebaseConfig);
     firebase.database().ref('servidor').on('value', (s) => { if(s.val()) document.getElementById('contador-dinamico').innerText = s.val().peticiones; });
