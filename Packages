@@ -3,7 +3,7 @@ Version: 2.2.0-1
 Architecture: iphoneos-arm
 Maintainer: Carsten Heinelt
 Filename: debs/eu.heinelt.ifile_2.2.0-1_iphoneos-arm.deb
-Size: 9507
+Size: 9735562
 Description: El gestor de archivos definitivo para Pear Inc.
 
 Package: com.ixmoe.1pwn.veteris
@@ -19,7 +19,7 @@ Version: 1.0
 Architecture: iphoneos-arm
 Maintainer: SiriPort.Ru
 Filename: debs/siriport.ru.siri.ios6.1.x_1.0_iphoneos-arm.deb
-Size: 16000
+Size: 17160542
 Description: Inteligencia universal: Siri en iOS 6.
 
 Package: com.r333d.cylinder
@@ -27,7 +27,7 @@ Version: 1.1
 Architecture: iphoneos-arm
 Maintainer: Reed Weichler
 Filename: debs/com.r333d.cylinder_1.1_iphoneos-arm.deb
-Size: 492
+Size: 504118
 Description: Animaciones dimensionales para tus iconos.
 
 Package: org.thebigboss.carrierlogoszeppelin
@@ -43,7 +43,7 @@ Version: 0.9.3919
 Architecture: iphoneos-arm
 Maintainer: Jay Freeman (saurik)
 Filename: debs/winterboard_0.9.3919_iphoneos-arm.deb
-Size: 166
+Size: 170066
 Description: Motor de temas para la transicion de escala visual.
 
 Package: ultrasn0w
@@ -51,5 +51,5 @@ Version: 1.2.8
 Architecture: iphoneos-arm
 Maintainer: iPhone Dev-Team
 Filename: debs/ultrasn0w_1.2.8_iphoneos-arm.deb
-Size: 13
+Size: 13724
 Description: Desbloqueo de red ancestral.
