@@ -1,9 +1,8 @@
-Icon: CydiaIcon.png
-Origin: Nico Repo
-Label: Nico Repo E
+Origin: Pear Inc.
+Label: Pear Repo
 Suite: stable
-Version: 2.0
-Codename: ios
+Version: 1.0
+Codename: Tesseracto
 Architectures: iphoneos-arm
 Components: main
-Description: Repositorio de Nico para proyecto escolar.
+Description: Repositorio oficial de Nico - Memoria 5D y Universal Intelligence.
