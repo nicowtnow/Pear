@@ -5,6 +5,7 @@ Maintainer: Carsten Heinelt
 Filename: debs/eu.heinelt.ifile_2.2.0-1_iphoneos-arm.deb
 Size: 9507
 Description: El gestor de archivos definitivo para Pear Inc.
+Icon: https://nicowtnow.github.io/Pear/ifile.png
 
 Package: com.ixmoe.1pwn.veteris
 Version: 2.1.1
@@ -13,6 +14,7 @@ Maintainer: Electimon
 Filename: debs/com.ixmoe.1pwn.veteris_2.1.1_iphoneos-arm.deb
 Size: 1904
 Description: Tienda de apps clasicas para el ecosistema.
+Icon: https://nicowtnow.github.io/Pear/veteris.png
 
 Package: siriport.ru.siri.ios6.1.x
 Version: 1.0
@@ -21,6 +23,7 @@ Maintainer: SiriPort.Ru
 Filename: debs/siriport.ru.siri.ios6.1.x_1.0_iphoneos-arm.deb
 Size: 16000
 Description: Inteligencia universal: Siri en iOS 6.
+Icon: https://nicowtnow.github.io/Pear/siri.png
 
 Package: com.r333d.cylinder
 Version: 1.1
@@ -29,6 +32,7 @@ Maintainer: Reed Weichler
 Filename: debs/com.r333d.cylinder_1.1_iphoneos-arm.deb
 Size: 492
 Description: Animaciones dimensionales para tus iconos.
+Icon: https://nicowtnow.github.io/Pear/cylinder.png
 
 Package: org.thebigboss.carrierlogoszeppelin
 Version: 2.0
@@ -37,6 +41,7 @@ Maintainer: Alex Zielenski
 Filename: debs/org.thebigboss.carrierlogoszeppelin_2.0_iphoneos-arm.deb
 Size: 378
 Description: Cambia el logo de red por el de Pear Inc.
+Icon: https://nicowtnow.github.io/Pear/zeppelin.png
 
 Package: winterboard
 Version: 0.9.3919
@@ -45,6 +50,7 @@ Maintainer: Jay Freeman (saurik)
 Filename: debs/winterboard_0.9.3919_iphoneos-arm.deb
 Size: 166
 Description: Motor de temas para la transicion de escala visual.
+Icon: https://nicowtnow.github.io/Pear/winterboard.png
 
 Package: ultrasn0w
 Version: 1.2.8
@@ -53,3 +59,4 @@ Maintainer: iPhone Dev-Team
 Filename: debs/ultrasn0w_1.2.8_iphoneos-arm.deb
 Size: 13
 Description: Desbloqueo de red ancestral.
+Icon: https://nicowtnow.github.io/Pear/ultrasnow.png
