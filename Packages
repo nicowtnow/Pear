@@ -13,7 +13,7 @@ Version: 2.1.1-1
 Architecture: iphoneos-arm
 Maintainer: electimon
 Depends: mobilesubstrate
-Filename: debs/com.ixmoe.1pwn.veteris_2.1.1_iphoneos-arm.deb
+Filename: debs/com.ixmoe.1pwn.veteris_2.1.1-1_iphoneos-arm.deb
 Size: 1950196
 MD5sum: 72c210cda9263f6ba3d60ed5e9f36a4a
 Section: Multimedia
