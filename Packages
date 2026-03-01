@@ -1,0 +1,164 @@
+Package: com.ijinshan.kbatterydoctorpro.universal
+Version: 4.6.1-11
+Architecture: iphoneos-arm
+Maintainer: iJinshan
+Filename: debs/com.ijinshan.kbatterydoctorpro.universal_4.6.1-11_iphoneos-arm.deb
+Size: 3061303
+MD5sum: 763e14807eac2378cdefe09eb37fc93a
+Section: System
+Description: Advanced battery management and system optimizer.
+
+Package: com.ixmoe.1pwn.veteris
+Name: Veteris
+Version: 2.1.1-1
+Architecture: iphoneos-arm
+Maintainer: electimon
+Depends: mobilesubstrate
+Filename: debs/com.ixmoe.1pwn.veteris_2.1.1_iphoneos-arm.deb
+Size: 1950196
+MD5sum: 72c210cda9263f6ba3d60ed5e9f36a4a
+Section: Multimedia
+Description: The best way to get old apps back on legacy iOS.
+
+Package: com.mathieubolard.killbackground
+Name: Killbackground
+Version: 1.3.1-7
+Architecture: iphoneos-arm
+Maintainer: Mathieu Bolard
+Filename: debs/com.mathieubolard.killbackground_1.3.1-7_iphoneos-arm.deb
+Size: 71286
+MD5sum: c55f0d236e655596e15d79169ec48638
+Section: Tweaks
+Description: Kill all background apps with a single tap.
+
+Package: com.phoenix.nospot
+Name: NotSpot
+Version: 0.6
+Architecture: iphoneos-arm
+Maintainer: Phoenix
+Filename: debs/com.phoenix.nospot_0.6_iphoneos-arm.deb
+Size: 2292
+MD5sum: 520479373d8e9464d7c30da36697e836
+Section: Tweaks
+Description: Disable Spotlight search to improve performance.
+
+Package: com.r333d.cylinder
+Name: Cylinder
+Version: 1.1
+Architecture: iphoneos-arm
+Maintainer: r333d
+Filename: debs/com.r333d.cylinder_1.1_iphoneos-arm.deb
+Size: 504118
+MD5sum: dfe7a221fee7f14d1384d2fe88d9b2ca
+Section: Tweaks
+Description: Iconic barrel-style icon animations.
+
+Package: com.skyglow.itunesstorex
+Name: iTunesStoreX
+Version: 3.2
+Architecture: iphoneos-arm
+Maintainer: Skyglow
+Filename: debs/com.skyglow.itunesstorex_3.2_iphoneos-arm.deb
+Size: 115508
+MD5sum: fa8fe44c49c55107866972e653a9c72c
+Section: Addons
+Description: Fixes for the legacy iTunes Store.
+
+Package: com.skyglow.mapsx
+Name: MapsX
+Version: 3.2.1
+Architecture: iphoneos-arm
+Maintainer: Skyglow
+Filename: debs/com.skyglow.mapsx_3.2.1_iphoneos-arm.deb
+Size: 155448
+MD5sum: 15778d379630792fd1a61be933501c4d
+Section: Addons
+Description: Restores functionality to legacy Google Maps.
+
+Package: com.skyglow.stocksx
+Name: StocksX
+Version: 2.4
+Architecture: iphoneos-arm
+Maintainer: Skyglow
+Filename: debs/com.skyglow.stocksx_2.4_iphoneos-arm.deb
+Size: 18258
+MD5sum: 2d1a3cf09f0241e2382c86b2e6a91d16
+Section: Addons
+Description: Fixes for the classic Stocks app.
+
+Package: com.skyglow.weatherx
+Name: WeatherX
+Version: 3.4
+Architecture: iphoneos-arm
+Maintainer: Skyglow
+Filename: debs/com.skyglow.weatherx_3.4_iphoneos-arm.deb
+Size: 85034
+MD5sum: e79ecdd82bffd2f727a96d3d72ded2f
+Section: Addons
+Description: Bring back working weather data.
+
+Package: eu.heinelt.ifile
+Name: iFile
+Version: 2.2.0-1
+Architecture: iphoneos-arm
+Maintainer: Carsten Heinelt
+Filename: debs/eu.heinelt.ifile_2.2.0-1_iphoneos-arm.deb
+Size: 9735562
+MD5sum: 4528c52a61bd00514f3b081b391eab3f
+Section: System
+Description: The ultimate file manager for iPhone.
+
+Package: Gawk
+Name: gawk
+Version: 3.1.6-2p
+Architecture: iphoneos-arm
+Maintainer: Jay Freeman (saurik)
+Filename: debs/gawk_3.1.6-2p_iphoneos-arm.deb
+Size: 831308
+MD5sum: d64d7414e1ec5a065536d5e5430681e2
+Section: Terminal_Support
+Description: Pattern scanning and processing language.
+
+Package: org.thebigboss.carrierlogoszeppelin
+Name: Zeppelllin
+Version: 2.0
+Architecture: iphoneos-arm
+Maintainer: BigBoss
+Filename: debs/org.thebigboss.carrierlogoszeppelin_2.0_iphoneos-arm.deb
+Size: 386704
+MD5sum: 011c0a75d10ad7a9ea46d502a6e63db7
+Section: Themes_Zeppelin
+Description: A huge collection of carrier logos for Zeppelin.
+
+Package: siriport.ru.siri.ios6.1.x
+Name: Siri
+Version: 1.0
+Architecture: iphoneos-arm
+Maintainer: SiriPort.ru
+Filename: debs/siriport.ru.siri.ios6.1.x_1.0_iphoneos-arm.deb
+Size: 17160542
+MD5sum: e08671e8103dc92fac706ec9a87be658
+Section: Siri
+Description: Port of Siri to older devices.
+
+Package: ultrasn0w
+Name: UltraSn0w
+Version: 1.2.8
+Architecture: iphoneos-arm
+Maintainer: iPhone Dev-Team
+Filename: debs/ultrasn0w_1.2.8_iphoneos-arm.deb
+Size: 13724
+MD5sum: 84ccdcb9bf66049981f1de3fdfa8061d
+Section: Utilities
+Description: Software unlock for older basebands.
+
+Package: winterboard
+Name: Winterboard
+Version: 0.9.3919
+Architecture: iphoneos-arm
+Maintainer: Jay Freeman (saurik)
+Filename: debs/winterboard_0.9.3919_iphoneos-arm.deb
+Size: 170066
+MD5sum: 75f727e51968b039c3af244f52f6ba18
+Section: Themes
+Description: The classic theme engine for iOS.
