@@ -1,0 +1,352 @@
+Package: com.ijinshan.kbatterydoctorpro.universal
+Name: Battery Doctor Pro
+Version: 4.6.1-12
+Architecture: iphoneos-arm
+Autor: iJinshan
+Maintainer: iJinshan, Nico Repo for preservation
+Filename: debs/com.ijinshan.kbatterydoctorpro.universal_4.6.1-11_iphoneos-arm.deb
+Size: 3061308
+MD5sum: 763e14807eac2378cdefe09eb37fc93a
+Section: Utilities
+Description: All Rights Reserved to ijinshan (Kingsoft / Cheetah Mobile). This package is provided strictly for historical preservation and educational purposes. Battery Doctor Pro (version 4.6.1-12) is a legacy software utility originally developed by ijinshan (Kingsoft / Cheetah Mobile). The software, including all binary code, user interface assets, trademarks, and logic, remains the exclusive property of ijinshan (Kingsoft / Cheetah Mobile). This is proprietary, closed-source software. No rights to the source code are granted, and no reverse engineering, modification, or commercial exploitation is authorized by this preservation effort within Nico Repo. This repository functions solely as a digital archive to prevent the loss of historical software tools. No revenue is generated, and this project does not claim any ownership over the distributed binary. We acknowledge and honor the original developers at ijinshan (Kingsoft / Cheetah Mobile) for their contribution to mobile resource management. This archive ensures that their work remains accessible for academic study and hardware restoration.If you are the legitimate copyright holder and wish for this tweak to be removed from Nico Repo, please contact me immediately at bolillomx@icloud.com and I will take it down as soon as possible.
+
+Package: com.ixmoe.1pwn.veteris
+Name: Veteris
+Version: 2.1.1-1
+Architecture: iphoneos-arm
+Maintainer: Electimon, Nico Repo for preservation
+Autor: bagxml, telgamon, justus61, hackulous/kjc, plantiniumstuff, mikhail churakov, and justus61
+Depends: moe.yzu.veterishelper, mobilesubstrate
+Depends: mobilesubstrate
+Filename: debs/com.ixmoe.1pwn.veteris_2.1.1_iphoneos-arm.deb
+Size: 1950196
+MD5sum: 72c210cda9263f6ba3d60ed5e9f36a4a
+Section: Applications
+Description: All Rights Reserved to electimon, bagxml, telgamon, justus61, hackulous/kjc, plantiniumstuff, mikhail churakov, and justus61. This package is provided for historical preservation, educational purposes, and community utility. Veteris is an AppStore client designed to restore functionality to legacy iOS devices. This software is distributed under the terms of the MIT License (2011-2018). You are free to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the software, provided that the original copyright notice and permission notice are included in all copies or substantial portions of the software. This software incorporates the RSA Data Security, Inc. MD5 Message-Digest Algorithm. All derivative works are identified as such, in compliance with RSA requirements. The software is provided "as is", without warranty of any kind. Use of this tweak is at the user's own risk; the creator of Nico Repo and the original developers are not responsible for any damage to the iDevice or loss of data. Nico Repo acts as a digital archive to ensure that users of legacy hardware retain access to these tools. We acknowledge and honor all original contributors for their work, and full credit is given to the original authors and repositories.If you are the legitimate copyright holder and wish for this tweak to be removed from Nico Repo, please contact me immediately at bolillomx@icloud.com and I will take it down as soon as possible.
+
+Package: com.mathieubolard.killbackground
+Name: Killbackground
+Version: 1.3.1-8
+Architecture: iphoneos-arm
+Maintainer: Mathieu Bolard, Nico Repo for preservation
+Autor: Mathieu Bolard
+Filename: debs/com.mathieubolard.killbackground_1.3.1-7_iphoneos-arm.deb
+Size: 71286
+MD5sum: c55f0d236e655596e15d79169ec48638
+Section: Utilities
+Description: All Rights Reserved to Mathieu Bolard (mattlawer). This package is provided for historical preservation, educational purposes, and community utility. KillBackground is a utility originally distributed via the BigBoss repository, designed to allow users to close all background applications from the App Switcher on legacy iOS devices. This software is distributed as an open-source project by its original creator. You are free to use, copy, and distribute this software, provided that the original copyright notice and credit to Mathieu Bolard (mattlawer) are maintained. The software is provided "as is", without warranty of any kind. Use of this tweak is at the user's own risk; the creator of Nico Repo and the original developer are not responsible for any damage to the iDevice or loss of data. Nico Repo acts as a digital archive to ensure that users of legacy hardware retain access to these tools. We acknowledge and honor Mathieu Bolard for his contribution to the iOS jailbreak community via the BigBoss repository.If you are the legitimate copyright holder and wish for this tweak to be removed from Nico Repo, please contact me immediately at bolillomx@icloud.com and I will take it down as soon as possible.
+
+Package: com.phoenix.nospot
+Name: NotSpot
+Version: 0.7
+Architecture: iphoneos-arm
+Maintainer: Phoenix, The Mirage, Nico Repo for preservation
+Autor: The Mirage, Phoenix
+Filename: debs/com.phoenix.nospot_0.6_iphoneos-arm.deb
+Size: 2292
+MD5sum: 520479373d8e9464d7c30da36697e836
+Section: Utilities
+Description: All Rights Reserved to The Mirage (The_M1rage) & Phoenix. This package is provided for historical preservation, educational purposes, and community utility. NotSpot is a utility originally distributed via the BigBoss repository, designed to remove or hide the Spotlight search interface on legacy iOS devices. This software is proprietary and closed-source. The software, including all binary code, user interface assets, and logic, remains the exclusive property of The Mirage (The_M1rage). No rights to the source code are granted, and no reverse engineering, modification, or commercial exploitation is authorized by this preservation effort within Nico Repo. This repository functions solely as a digital archive to prevent the loss of historical software tools. No revenue is generated, and this project does not claim any ownership over the distributed binary. We acknowledge and honor the original developer, The Mirage (The_M1rage), for his contribution to the iOS jailbreak community via the BigBoss repository.If you are the legitimate copyright holder and wish for this tweak to be removed from Nico Repo, please contact me immediately at bolillomx@icloud.com and I will take it down as soon as possible.
+
+Package: com.r333d.cylinder
+Name: Cylinder
+Version: 1.2
+Architecture: iphoneos-arm
+Maintainer: r333d
+Autor: r333d, Reed Schimmel
+Filename: debs/com.r333d.cylinder_1.1_iphoneos-arm.deb
+Size: 504118
+MD5sum: dfe7a221fee7f14d1384d2fe88d9b2ca
+Section: Utilities
+Description: All Rights Reserved to Reed Schimmel(r333d). This package is provided for historical preservation, educational purposes, and community utility. Cylinder is a utility originally distributed via the BigBoss repository, designed to allow users to customize their SpringBoard page transitions with various 3D animations on legacy iOS devices. This software is proprietary and closed-source. The software, including all binary code, user interface assets, and logic, remains the exclusive property of Reed Schimmel. No rights to the source code are granted, and no reverse engineering, modification, or commercial exploitation is authorized by this preservation effort within Nico Repo. This repository functions solely as a digital archive to prevent the loss of historical software tools. No revenue is generated, and this project does not claim any ownership over the distributed binary. We acknowledge and honor the original developer, Reed Schimmel, for his contribution to the iOS jailbreak community via the BigBoss repository.If you are the legitimate copyright holder and wish for this tweak to be removed from Nico Repo, please contact me immediately at bolillomx@icloud.com and I will take it down as soon as possible.
+
+Package: com.skyglow.itunesstorex
+Name: iTunesStoreX
+Version: 3.2
+Architecture: iphoneos-arm
+Maintainer: Skyglow, ObscureMosquito, Nico Repo for preservation
+Autor: Skyglow, ObscureMosquito 
+Filename: debs/com.skyglow.itunesstorex_3.2_iphoneos-arm.deb
+Size: 115508
+MD5sum: fa8fe44c49c55107866972e653a9c72c
+Section: Addons
+Description: All Rights Reserved to ObscureMosquito. This package is provided for historical preservation, educational purposes, and community utility. iTunesStore X is a utility originally distributed via the Skyglow repository, designed to restore functionality to the iTunes and App Store interfaces on legacy iOS devices by fixing connection issues with outdated storefront domains. This software is distributed as an open-source project under the GPL-3.0 license. You are free to use, copy, modify, and distribute this software, provided that the original copyright notice and credit to the original author, ObscureMosquito, are maintained. The software is provided "as is", without warranty of any kind. Use of this tweak is at the user's own risk; the creator of Nico Repo and the original developer are not responsible for any damage to the iDevice or loss of data. Nico Repo acts as a digital archive to ensure that users of legacy hardware retain access to these tools. We acknowledge and honor ObscureMosquito for his contribution to the iOS jailbreak community via the Skyglow repository.If you are the legitimate copyright holder and wish for this tweak to be removed from Nico Repo, please contact me immediately at bolillomx@icloud.com and I will take it down as soon as possible.
+
+Package: com.skyglow.mapsx
+Name: MapsX
+Version: 3.2.1
+Architecture: iphoneos-arm
+Maintainer: Skyglow, ObscureMosquito, Nico Repo for preservation
+Autor: Skyglow, ObscureMosquito 
+Filename: debs/com.skyglow.mapsx_3.2.1_iphoneos-arm.deb
+Size: 155448
+MD5sum: 15778d379630792fd1a61be933501c4d
+Section: Addons
+Description: All Rights Reserved to ObscureMosquito. This package is provided for historical preservation, educational purposes, and community utility. MapsX is a utility originally distributed via the Skyglow repository, designed to restore functionality to Apple Maps and system-wide MapKit views on legacy iOS devices by redirecting requests to modern, operational servers. This software is proprietary and closed-source. The software, including all binary code, user interface assets, and logic, remains the exclusive property of ObscureMosquito. No rights to the source code are granted, and no reverse engineering, modification, or commercial exploitation is authorized by this preservation effort within Nico Repo. This repository functions solely as a digital archive to prevent the loss of historical software tools. No revenue is generated, and this project does not claim any ownership over the distributed binary. We acknowledge and honor the original developer, ObscureMosquito, for his significant contribution to the iOS jailbreak community via the Skyglow repository.If you are the legitimate copyright holder and wish for this tweak to be removed from Nico Repo, please contact me immediately at bolillomx@icloud.com and I will take it down as soon as possible.
+
+Package: com.skyglow.stocksx
+Name: StocksX
+Version: 2.4
+Architecture: iphoneos-arm
+Maintainer: Skyglow, ObscureMosquito, Nico Repo for preservation
+Autor: Skyglow, ObscureMosquito
+Filename: debs/com.skyglow.stocksx_2.4_iphoneos-arm.deb
+Size: 18258
+MD5sum: 2d1a3cf09f0241e2382c86b2e6a91d16
+Section: Addons
+Description: All Rights Reserved to ObscureMosquito. This package is provided for historical preservation, educational purposes, and community utility. StocksX is a utility originally distributed via the Skyglow repository, designed to restore functionality to the native Stocks application on legacy iOS devices by redirecting data requests to functional, modern APIs. This software is proprietary and closed-source. The software, including all binary code, user interface assets, and logic, remains the exclusive property of ObscureMosquito. No rights to the source code are granted, and no reverse engineering, modification, or commercial exploitation is authorized by this preservation effort within Nico Repo. This repository functions solely as a digital archive to prevent the loss of historical software tools. No revenue is generated, and this project does not claim any ownership over the distributed binary. We acknowledge and honor the original developer, ObscureMosquito, for his significant contribution to the iOS jailbreak community via the Skyglow repository.If you are the legitimate copyright holder and wish for this tweak to be removed from Nico Repo, please contact me immediately at bolillomx@icloud.com and I will take it down as soon as possible.
+
+Package: com.skyglow.weatherx
+Name: WeatherX
+Version: 3.4
+Architecture: iphoneos-arm
+Maintainer: Skyglow, ObscureMosquito, Nico Repo for preservation
+Autor: Skyglow, ObscureMosquito
+Filename: debs/com.skyglow.weatherx_3.4_iphoneos-arm.deb
+Size: 85034
+MD5sum: de79ecdd82bffd2f727a96d3d72ded2f
+Section: Addons
+Description: All Rights Reserved to ObscureMosquito. This package is provided for historical preservation, educational purposes, and community utility. Weather X is a utility originally distributed via the Skyglow repository, designed to restore functionality to the native Weather application and widgets on legacy iOS devices by redirecting requests to functional, modern weather data APIs. This software is proprietary and closed-source. The software, including all binary code, user interface assets, and logic, remains the exclusive property of ObscureMosquito. No rights to the source code are granted, and no reverse engineering, modification, or commercial exploitation is authorized by this preservation effort within Nico Repo. This repository functions solely as a digital archive to prevent the loss of historical software tools. No revenue is generated, and this project does not claim any ownership over the distributed binary. We acknowledge and honor the original developer, ObscureMosquito, for his significant contribution to the iOS jailbreak community via the Skyglow repository.If you are the legitimate copyright holder and wish for this tweak to be removed from Nico Repo, please contact me immediately at bolillomx@icloud.com and I will take it down as soon as possible.
+
+Package: eu.heinelt.ifile
+Name: iFile
+Version: 2.2.0-2
+Architecture: iphoneos-arm
+Maintainer: Carsten Heinelt, Nico Repo for preservation
+Autor: Carsten Heinelt
+Filename: debs/eu.heinelt.ifile_2.2.0-1_iphoneos-arm.deb
+Size: 9735562
+MD5sum: 4528c52a61bd00514f3b081b391eab3f
+Section: Utilities
+Description: All Rights Reserved to Carsten Heinelt (FineTouch). This package is provided for historical preservation and educational purposes. iFile is a file manager utility originally distributed via the BigBoss repository, designed to provide comprehensive file system access and management for legacy iOS devices. This software is proprietary and closed-source. The software, including all binary code, user interface assets, and logic, remains the exclusive property of Carsten Heinelt (FineTouch). No rights to the source code are granted, and no reverse engineering, modification, or commercial exploitation is authorized by this preservation effort within Nico Repo. This repository functions solely as a digital archive to prevent the loss of historical software tools. No revenue is generated, and this project does not claim any ownership over the distributed binary. We acknowledge and honor the original developer, Carsten Heinelt, for his foundational contribution to the iOS jailbreak ecosystem via the BigBoss repository.If you are the legitimate copyright holder and wish for this tweak to be removed from Nico Repo, please contact me immediately at bolillomx@icloud.com and I will take it down as soon as possible.
+
+Package: gawk
+Name: gawk
+Version: 3.1.6-3
+Architecture: iphoneos-arm
+Maintainer: Jay Freeman (saurik), Nico Repo for preservation
+Autor: Jay Freeman (saurik)
+Filename: debs/gawk_3.1.6-2p_iphoneos-arm.deb
+Size: 831308
+MD5sum: d64d7414e1ec5a065536d5e5430681e2
+Section: Utilities
+Description: All Rights Reserved to The Free Software Foundation (FSF). This package is provided for historical preservation, educational purposes, and community utility. gawk (GNU AWK) is the GNU Project's implementation of the AWK programming language, originally distributed as a core Unix utility. It is a powerful text-processing tool essential for scripting and system administration tasks on Unix-like operating systems, including iOS. This software is distributed as free and open-source software (FOSS) under the terms of the GNU General Public License (GPL). You are free to use, copy, modify, and distribute this software, provided that the terms of the GPL are respected. This software is provided "as is", without warranty of any kind. Use of this tool is at the user's own risk; the creator of Nico Repo and the Free Software Foundation are not responsible for any damage to the iDevice or loss of data. Nico Repo acts as a digital archive to ensure that users of legacy hardware retain access to these foundational tools. We acknowledge and honor the Free Software Foundation and the global open-source community for their fundamental contribution to the evolution of computing.If you are the legitimate copyright holder and wish for this utility to be removed from Nico Repo, please contact me immediately at bolillomx@icloud.com and I will take it down as soon as possible.
+
+Package: org.thebigboss.carrierlogoszeppelin
+Name: Zeppelllin
+Version: 2.1
+Architecture: iphoneos-arm
+Maintainer: BigBoss, Alex Zielenski, Nico Repo for preservation
+Autor: BigBoss, Alex Zielenski
+Filename: debs/org.thebigboss.carrierlogoszeppelin_2.0_iphoneos-arm.deb
+Size: 386704
+MD5sum: 011c0a75d10ad7a9ea46d502a6e63db7
+Section: Themes
+Description: All Rights Reserved to Alex Zielenski. This package is provided for historical preservation, educational purposes, and community utility. Zeppelin is a utility originally distributed via the ModMyi repository, designed to allow users to replace the carrier text in the status bar with custom logos or icons on legacy iOS devices. This software is proprietary and closed-source. The software, including all binary code, user interface assets, and logic, remains the exclusive property of Alex Zielenski. No rights to the source code are granted, and no reverse engineering, modification, or commercial exploitation is authorized by this preservation effort within Nico Repo. This repository functions solely as a digital archive to prevent the loss of historical software tools. No revenue is generated, and this project does not claim any ownership over the distributed binary. We acknowledge and honor the original developer, Alex Zielenski, for his significant contribution to the iOS jailbreak community via the ModMyi repository.If you are the legitimate copyright holder and wish for this tweak to be removed from Nico Repo, please contact me immediately at bolillomx@icloud.com and I will take it down as soon as possible.
+
+Package: siriport.ru.siri.ios6.1.x
+Name: Siri
+Version: 1.0
+Architecture: iphoneos-arm
+Maintainer: SiriPort.ru, Nico Repo for preservation
+Autor: SiriPort.ru
+Filename: debs/siriport.ru.siri.ios6.1.x_1.0_iphoneos-arm.deb
+Size: 17160542
+MD5sum: e08671e8103dc92fac706ec9a87be658
+Section: Siri
+Description: All Rights Reserved to the SiriPort.ru Development Team. This package is provided for historical preservation, educational purposes, and community utility. Siri Port (iOS) is a utility originally distributed via the SiriPort.ru repository, designed to enable Siri functionality on non-supported legacy iOS devices by redirecting requests to custom proxy servers. This software is proprietary and closed-source. The software, including all binary code, user interface assets, and logic, remains the exclusive property of the SiriPort.ru developers. No rights to the source code are granted, and no reverse engineering, modification, or commercial exploitation is authorized by this preservation effort within Nico Repo. This repository functions solely as a digital archive to prevent the loss of historical software tools. No revenue is generated, and this project does not claim any ownership over the distributed binary. We acknowledge and honor the development team for their significant contribution to the iOS jailbreak community via the SiriPort.ru repository.If you are the legitimate copyright holder and wish for this tweak to be removed from Nico Repo, please contact me immediately at bolillomx@icloud.com and I will take it down as soon as possible.
+
+Package: ultrasn0w
+Name: UltraSn0w
+Version: 1.2.8
+Architecture: iphoneos-arm
+Maintainer: iPhone Dev-Team, Nico Repo for preservation
+Autor: iPhone Dev-Team
+Filename: debs/ultrasn0w_1.2.8_iphoneos-arm.deb
+Size: 13724
+MD5sum: 84ccdcb9bf66049981f1de3fdfa8061d
+Section: Utilities
+Description: Software unlock for older basebands.All Rights Reserved to the iPhone Dev Team. This package is provided for historical preservation, educational purposes, and community utility. Ultrasn0w is a utility originally distributed via the UltraSn0w repository and BigBoss, designed to unlock the baseband of legacy GSM iPhones, allowing them to be used on carriers other than those originally specified by Apple. This software is proprietary and closed-source. The software, including all binary code, user interface assets, and logic, remains the exclusive property of the iPhone Dev Team. No rights to the source code are granted, and no reverse engineering, modification, or commercial exploitation is authorized by this preservation effort within Nico Repo. This repository functions solely as a digital archive to prevent the loss of historical software tools. No revenue is generated, and this project does not claim any ownership over the distributed binary. We acknowledge and honor the iPhone Dev Team for their foundational contribution to the iOS jailbreak community.If you are the legitimate copyright holder and wish for this tweak to be removed from Nico Repo, please contact me immediately at bolillomx@icloud.com and I will take it down as soon as possible.
+
+Package: winterboard
+Name: Winterboard
+Version: 0.9.3-9
+Architecture: iphoneos-arm
+Maintainer: Jay Freeman (saurik), Nico Repo for preservation
+Autor: Jay Freeman (saurik)
+Filename: debs/winterboard_0.9.3919_iphoneos-arm.deb
+Size: 170066
+MD5sum: 75f727e51968b039c3af244f52f6ba18
+Section: Utilities
+Description: The classic theme engine for iOS.All Rights Reserved to Jay Freeman (saurik). This package is provided for historical preservation, educational purposes, and community utility. WinterBoard is a utility originally distributed via the Cydia/Saurik repository, designed to enable comprehensive theme application and visual customization on legacy iOS devices. This software is proprietary and closed-source. The software, including all binary code, user interface assets, and logic, remains the exclusive property of Jay Freeman (saurik). No rights to the source code are granted, and no reverse engineering, modification, or commercial exploitation is authorized by this preservation effort within Nico Repo. This repository functions solely as a digital archive to prevent the loss of historical software tools. No revenue is generated, and this project does not claim any ownership over the distributed binary. We acknowledge and honor the original developer, Jay Freeman (saurik), for his foundational contribution to the iOS jailbreak community via the Cydia repository.If you are the legitimate copyright holder and wish for this tweak to be removed from Nico Repo, please contact me immediately at bolillomx@icloud.com and I will take it down as soon as possible.
+
+Package: bag.xml.tuberepair
+Name: TubeRepair
+Version: 1.2-Beta-1
+Architecture: iphoneos-arm
+Maintainer: bagxml, Nico Repo for preservation
+Autor: BagXML
+Filename: debs/bag.xml.tuberepair_1.2-Beta-1_iphoneos-arm.deb
+Size: 100066
+MD5sum: 284b8442129f000190bf08aaafb15433
+Section: Addons
+Description: All Rights Reserved to BagXML. This package is provided for historical preservation, educational purposes, and community utility. TubeRepair is a utility originally distributed via the BagXML repository, designed to restore functionality to the native YouTube application on legacy iOS devices by redirecting API requests to modern, operational endpoints. This software is proprietary and closed-source. The software, including all binary code, user interface assets, and logic, remains the exclusive property of BagXML. No rights to the source code are granted, and no reverse engineering, modification, or commercial exploitation is authorized by this preservation effort within Nico Repo. This repository functions solely as a digital archive to prevent the loss of historical software tools. No revenue is generated, and this project does not claim any ownership over the distributed binary. We acknowledge and honor the original developer, BagXML, for his significant contribution to the iOS jailbreak community via the BagXML repository.If you are the legitimate copyright holder and wish for this tweak to be removed from Nico Repo, please contact me immediately at bolillomx@icloud.com and I will take it down as soon as possible.
+
+Package: com.aoi.storefix
+Name: Store Fix
+Version: 1.0-7
+Architecture: iphoneos-arm
+Maintainer: aoiblog, Nico Repo for preservation
+Autor: aoiblog
+Filename: debs/com.aoi.storefix_1.0-7_iphoneos-arm.deb
+Size: 880
+MD5sum: 0a8524cc3b392539091f5c08a969b332
+Section: Addons
+Description: Necessary fixes for legacy App Store connections.All Rights Reserved to aoiblog. This package is provided for historical preservation, educational purposes, and community utility. AppStore Fix is a utility originally distributed via the aoiblog repository, designed to restore functionality to the native App Store application on legacy iOS devices by redirecting requests to functional, modern APIs. This software is proprietary and closed-source. The software, including all binary code, user interface assets, and logic, remains the exclusive property of aoiblog. No rights to the source code are granted, and no reverse engineering, modification, or commercial exploitation is authorized by this preservation effort within Nico Repo. This repository functions solely as a digital archive to prevent the loss of historical software tools. No revenue is generated, and this project does not claim any ownership over the distributed binary. We acknowledge and honor the original developer, aoiblog, for his significant contribution to the iOS jailbreak community via the aoiblog repository.If you are the legitimate copyright holder and wish for this tweak to be removed from Nico Repo, please contact me immediately at bolillomx@icloud.com and I will take it down as soon as possible.
+
+Package: com.chpwn.iphone.cydia.hooks-law
+Name: Hooks Law
+Version: 1.0.1-1
+Architecture: iphoneos-arm
+Maintainer: chpwn, Jay Freeman(saurik), Nico Repo for preservation
+Autor: chpwn, Jay Freeman(saurik)
+Filename: debs/com.chpwn.iphone.cydia.hooks-law_1.0.1-1_iphoneos-arm.deb
+Size: 15416
+MD5sum: 07cea259d531ebdfa877e6f63b1ce763
+Section: Utilities
+Description: Removes the delay when opening apps for a faster feel.All Rights Reserved to the respective original authors of hooking frameworks (notably Jay Freeman/saurik for MobileSubstrate/Substitute). This documentation is provided for historical preservation, educational purposes, and technical clarity. Hooking is a fundamental software engineering technique used to intercept and modify function calls within a system or application at runtime. In the context of the iOS jailbreak ecosystem, this mechanism is the core logical bridge that allows all third-party tweaks, patches, and interface modifications to interact with and alter the native behavior of the iOS operating system. This software logic remains the intellectual property of the original framework developers. No rights to the source code are granted, and no reverse engineering, modification, or commercial exploitation is authorized by this preservation effort within Nico Repo. This repository functions solely as a digital archive to ensure the preservation of the technical knowledge and tools that maintain the functionality of legacy hardware. We acknowledge and honor the foundational developers of these frameworks for their essential contribution to the iOS jailbreak ecosystem.If there is any concern regarding the documentation or inclusion of these technical methodologies within Nico Repo, please contact me immediately at bolillomx@icloud.com and I will address it as soon as possible.
+
+Package: com.nablac0d3.sslkillswitch2
+Name: SSLKillSwitch2
+Version: 0.14-3
+Architecture: iphoneos-arm
+Maintainer: nablac0d3, Nico Repo for preservation
+Autor: nablac0d3
+Filename: debs/com.nablac0d3.sslkillswitch2_0.14-3+debug_iphoneos-arm.deb
+Size: 8278
+MD5sum: 1b81d9ae31d1877e9d4ca0dcfcb26546
+Section: Tweaks
+Description: Blackbox tool to disable SSL certificate validation.All Rights Reserved to Alban Diquet (nabla-c0d3). This package is provided for historical preservation, educational purposes, and community utility. SSL KillSwitch 2 is a utility originally distributed via the GitHub repository of Alban Diquet, designed to disable SSL certificate validation (including certificate pinning) on iOS devices. This tool is a critical component for security research and penetration testing, allowing the inspection of encrypted application traffic. This software is released under the BSD 3-Clause License, allowing for use, modification, and redistribution under specific conditions. While the source code is public and open, the resulting binary package is provided here for archival and research purposes. The creator of Nico Repo does not claim ownership over the software and holds no responsibility for any security breaches or misuse resulting from its deployment. We acknowledge and honor Alban Diquet for his significant contribution to the iOS security research community.If you are the legitimate copyright holder and wish for this utility to be removed from Nico Repo, please contact me immediately at bolillomx@icloud.com and I will take it down as soon as possible.
+
+Package: com.rpetrich.emphasize
+Name: Emphasize
+Version: 0.2.1
+Architecture: iphoneos-arm
+Maintainer: rpetrich, Nico Repo for preservation
+Autor: rpetrich
+Filename: debs/com.rpetrich.emphasize_0.2.1_iphoneos-arm.deb
+Size: 6896
+MD5sum: 025aa39a314b7cefa742f686c3f5f3b7
+Section: Tweaks
+Description: Choose a custom tint color for all of iOS.All Rights Reserved to Ryan Petrich (rpetrich). This package is provided for historical preservation, educational purposes, and community utility. Emphasize is a utility originally distributed via the BigBoss repository, designed to allow users to apply custom color tints and visual emphasis effects to various interface elements throughout the iOS system. This software is proprietary and closed-source. The software, including all binary code, user interface assets, and logic, remains the exclusive property of Ryan Petrich. No rights to the source code are granted, and no reverse engineering, modification, or commercial exploitation is authorized by this preservation effort within Nico Repo. This repository functions solely as a digital archive to prevent the loss of historical software tools. No revenue is generated, and this project does not claim any ownership over the distributed binary. We acknowledge and honor the original developer, Ryan Petrich, for his significant contribution to the iOS jailbreak community via the BigBoss repository.If you are the legitimate copyright holder and wish for this tweak to be removed from Nico Repo, please contact me immediately at bolillomx@icloud.com and I will take it down as soon as possible.
+
+Package: com.vsz.redeb
+Name: redeb
+Version: 1.0.3
+Architecture: iphoneos-arm
+Maintainer: vsz, Jay Freeman(saurik), Nico Repo for preservation
+Autor: vsz, Jay Freeman(saurik)
+Filename: debs/com.vsz.redeb_1.0.3_iphoneos-arm.deb
+Size: 3558
+MD5sum: 0d5d54f4a0546c4a659a0a91605a594c
+Section: Terminal_Support
+Description: Repackage any installed package into a .deb file.All Rights Reserved to the original developer (often associated with the jailbreak community, notably linked to the Cydia/Saurik ecosystem). This package is provided for historical preservation, educational purposes, and community utility. redeb is a command-line utility designed to extract and package installed jailbreak tweaks from a device into a standard Debian (.deb) format. This tool is essential for archiving and migrating tweaks that are no longer available in official repositories. This software is provided for the purpose of maintaining access to legacy software tools. The software remains the exclusive property of its original developers. No rights to the source code are granted, and no reverse engineering, modification, or commercial exploitation is authorized by this preservation effort within Nico Repo. This repository functions solely as a digital archive to prevent the loss of historical software tools. No revenue is generated, and this project does not claim any ownership over the distributed binary. We acknowledge and honor the developer for this essential tool for jailbreak preservation.If you are the legitimate copyright holder and wish for this utility to be removed from Nico Repo, please contact me immediately at bolillomx@icloud.com and I will take it down as soon as possible.
+
+Package: net.angelxwind.appsyncunified
+Name: AppSync Unified
+Version: 84.0
+Architecture: iphoneos-arm
+Maintainer: Karen/あけみ, Nico Repo for preservation
+Autor: Karen/あけみ
+Filename: debs/net.angelxwind.appsyncunified_84.0_iphoneos-arm.deb
+Size: 43176
+MD5sum: b1cf35c5824ecef084e9215702c5366f
+Section: Tweaks
+Description: Install unsigned, ad-hoc, or fake-signed IPA packages.All Rights Reserved to Karen Tsai (AngelXWind). This package is provided for historical preservation, educational purposes, and community utility. AppSync Unified is a utility originally distributed via the Karen's Pineapple repository, designed to allow the installation of unsigned, ad-hoc, and development-signed IPA packages on iOS devices. This software is proprietary and closed-source. The software, including all binary code, user interface assets, and logic, remains the exclusive property of Karen Tsai. No rights to the source code are granted, and no reverse engineering, modification, or commercial exploitation is authorized by this preservation effort within Nico Repo. This repository functions solely as a digital archive to prevent the loss of historical software tools. No revenue is generated, and this project does not claim any ownership over the distributed binary. We acknowledge and honor the original developer, Karen Tsai (AngelXWind), for her significant contribution to the iOS jailbreak community via her repository.If you are the legitimate copyright holder and wish for this utility to be removed from Nico Repo, please contact me immediately at bolillomx@icloud.com and I will take it down as soon as possible.
+
+Package: net.nekokawa.appstorefix
+Name: AppStore Fix
+Version: 0.3.5-4
+Architecture: iphoneos-arm
+Maintainer: nekokawa, Nico Repo for preservation
+Autor: nekokawa
+Filename: debs/net.nekokawa.appstorefix_0.3.5-4+debug_iphoneos-arm.deb
+Size: 130516
+MD5sum: 22ce84cd1dbdc83d1a672ac177c58910
+Section: Addons
+Description: Restores App Store functionality on old devices.All Rights Reserved to nekokawa. This package is provided for historical preservation, educational purposes, and community utility. AppStore Fix is a utility originally distributed via the nekokawa repository, designed to restore functionality to the native App Store application on legacy iOS devices by redirecting requests to functional, modern APIs. This software is proprietary and closed-source. The software, including all binary code, user interface assets, and logic, remains the exclusive property of nekokawa. No rights to the source code are granted, and no reverse engineering, modification, or commercial exploitation is authorized by this preservation effort within Nico Repo. This repository functions solely as a digital archive to prevent the loss of historical software tools. No revenue is generated, and this project does not claim any ownership over the distributed binary. We acknowledge and honor the original developer, nekokawa, for his significant contribution to the iOS jailbreak community via the nekokawa repository.If you are the legitimate copyright holder and wish for this tweak to be removed from Nico Repo, please contact me immediately at bolillomx@icloud.com and I will take it down as soon as possible.
+
+Package: openssh
+Name: OpenSSH
+Version: 6.7p1-13
+Architecture: iphoneos-arm
+Maintainer: Jay Freeman (saurik)
+Filename: debs/openssh_6.7p1-13_iphoneos-arm.deb
+Size: 2374376
+MD5sum: 5d702be7bb688a92446262e38263cea0
+Section: Administration
+Description: Secure shell server and client for remote access.
+
+Package: openssl
+Name: OpenSSL
+Version: 0.9.8zg-13
+Architecture: iphoneos-arm
+Maintainer: Jay Freeman (saurik)
+Filename: debs/openssl_0.9.8zg-13_iphoneos-arm.deb
+Size: 2601696
+MD5sum: 1ef304b3e1dac95c32bafb48efb2ce81
+Section: Development
+Description: Implementation of the SSL and TLS protocols.
+
+Package: com.ericasadun.utilities
+Name: Erica utilities
+Version: 1.1
+Architecture: iphoneos-arm
+Maintainer: Erica Sadun, Nico Repo for preservation
+Autor: Erica Sadun
+Depends: firmware (>= 3.0)
+Filename: debs/com.ericasadun.utilities_1.1_iphoneos-arm.deb
+Size: 55390
+MD5sum: 5eb7a16e0c4896e6a81e317e931d1ed2
+Section: Utilities
+Description: Standard command line utilities (plutil, etc) required for advanced tweaks.All Rights Reserved to Erica Sadun. This package is provided for historical preservation, educational purposes, and community utility. Erica Utilities is a collection of command-line tools and foundational software libraries originally distributed via Erica Sadun’s personal repository, designed to assist developers and power users in system management and application development on legacy iOS devices. This software is proprietary and closed-source. The software, including all binary code and underlying logic, remains the exclusive property of Erica Sadun. No rights to the source code are granted, and no reverse engineering, modification, or commercial exploitation is authorized by this preservation effort within Nico Repo. This repository functions solely as a digital archive to prevent the loss of historical software tools. No revenue is generated, and this project does not claim any ownership over the distributed binary. We acknowledge and honor the original developer, Erica Sadun, for her foundational contributions to the iOS developer community.If you are the legitimate copyright holder and wish for this utility to be removed from Nico Repo, please contact me immediately at bolillomx@icloud.com and I will take it down as soon as possible.
+
+Package: moe.yzu.veterishelper
+Name: Veteris Helper
+Version: 1.0.0-53+debug
+Architecture: iphoneos-arm
+Maintainer: Electimon, Nico Repo for preservation
+Autor: Electimon
+Depends: mobilesubstrate
+Filename: debs/moe.yzu.veterishelper_1.0.0-53+debug_iphoneos-arm.deb
+Size: 9744
+MD5sum: c4a8f9f2ecd360d51e72589ed1360c71
+Section: Utilities
+Description: Essential helper for Veteris to function correctly.All Rights Reserved to Yzu (moe.yzu). This package is provided for historical preservation, educational purposes, and community utility. VeterisHelper is a utility originally distributed via the Yzu repository, designed to assist the Veteris application in managing network connectivity and resource retrieval for legacy iOS devices. This software is proprietary and closed-source. The software, including all binary code, user interface assets, and logic, remains the exclusive property of Yzu. No rights to the source code are granted, and no reverse engineering, modification, or commercial exploitation is authorized by this preservation effort within Nico Repo. This repository functions solely as a digital archive to prevent the loss of historical software tools. No revenue is generated, and this project does not claim any ownership over the distributed binary. We acknowledge and honor the original developer, Yzu, for his significant contribution to the iOS jailbreak community via the Yzu repository.If you are the legitimate copyright holder and wish for this utility to be removed from Nico Repo, please contact me immediately at bolillomx@icloud.com and I will take it down as soon as possible.
+
+Package: uk.invoxiplaygames.checkmatestore
+Name: CheckmateStore
+Version: 1.2
+Architecture: iphoneos-arm
+Maintainer: Karen/invoxiplaygames, Nico Repo for preservation
+Autor: Karen/invoxiplaygames
+Depends: firmware (>= 3.0)
+Filename: debs/uk.invoxiplaygames.checkmatestore_1.2_iphoneos-arm.deb
+Size: 8420
+MD5sum: 963f5a24cabc1631001ae188ef870c4d
+Section: Utilities
+Description: Fixes App Store "Unable to Purchase" errors on iOS 3.1.3 - 6.1.6.All Rights Reserved to InvoxiPlayGames. This package is provided for historical preservation, educational purposes, and community utility. Checkmate, Store! is a utility originally distributed via the InvoxiPlayGames repository, designed to disable App Store compatibility checks on legacy iOS devices. By modifying the store's response, it enables the installation of compatible older versions of applications that would otherwise be blocked. This software is proprietary and closed-source. The software, including all binary code, user interface assets, and logic, remains the exclusive property of InvoxiPlayGames. No rights to the source code are granted, and no reverse engineering, modification, or commercial exploitation is authorized by this preservation effort within Nico Repo. This repository functions solely as a digital archive to prevent the loss of historical software tools. No revenue is generated, and this project does not claim any ownership over the distributed binary. We acknowledge and honor the original developer, InvoxiPlayGames, for his significant contribution to the iOS jailbreak community.If you are the legitimate copyright holder and wish for this utility to be removed from Nico Repo, please contact me immediately at bolillomx@icloud.com and I will take it down as soon as possible.
+
+Package: com.hackyouriphone.infinidock
+Name: infiniDock
+Version: 2.1.2-1
+Architecture: iphoneos-arm
+Maintainer: HackYouriPhone, chpwn, Nico Repo for preservation
+Autor: HackYouriPhone, chpwn
+Depends: mobilesubstrate, preferenceloader, com.chpwn.iconsupport, coreutils, firmware (>= 3.0)
+Depends: mobilesubstrate, preferenceloader
+Filename: debs/com.hackyouriphone.infinidock_2.1.2-1_iphoneos-arm.deb
+Size: 62848
+MD5sum: bc60b5fb1797791cfe261e6eaa2da08a
+Section: Utilities
+Description: Scroll your dock with as many icons as you want!All Rights Reserved to chpwn. This package is provided for historical preservation, educational purposes, and community utility. InfiniDock is a utility originally distributed via the BigBoss repository, designed to enable scrollable and unlimited icon placement within the iOS Dock. This software is proprietary and closed-source. The software, including all binary code, user interface assets, and logic, remains the exclusive property of chpwn. No rights to the source code are granted, and no reverse engineering, modification, or commercial exploitation is authorized by this preservation effort within Nico Repo. This repository functions solely as a digital archive to prevent the loss of historical software tools. No revenue is generated, and this project does not claim any ownership over the distributed binary. We acknowledge and honor the original developer, chpwn, for his significant contribution to the iOS jailbreak community via the BigBoss repository.If you are the legitimate copyright holder and wish for this utility to be removed from Nico Repo, please contact me immediately at bolillomx@icloud.com and I will take it down as soon as possible.
