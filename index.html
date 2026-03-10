@@ -5,27 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pear Inc. - Universal Repo</title>
     <style>
-        body { 
-            background: linear-gradient(to top, #660000 0%, #1a0000 100%);
-            background-attachment: fixed;
-            color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
-            margin: 0; padding: 0; min-height: 100vh;
-        }
-        #navbar {
-            background: linear-gradient(to bottom, #454545 0%, #111111 100%);
-            height: 44px; border-bottom: 1px solid #000;
-            display: flex; align-items: center; padding: 0 10px;
-            position: sticky; top: 0; z-index: 1000;
-        }
+        body { background: linear-gradient(to top, #660000 0%, #1a0000 100%); background-attachment: fixed; color: #ffffff; font-family: sans-serif; margin: 0; padding: 0; min-height: 100vh; }
+        #navbar { background: linear-gradient(to bottom, #454545 0%, #111111 100%); height: 44px; border-bottom: 1px solid #000; display: flex; align-items: center; padding: 0 10px; position: sticky; top: 0; z-index: 1000; }
         .apple-icon { font-size: 18px; color: white; margin-right: 10px; cursor: pointer; padding: 5px; }
         #navbar ul { list-style: none; margin: 0; padding: 0; display: flex; flex: 1; height: 100%; }
         #navbar li { flex: 1; text-align: center; line-height: 44px; color: #ccc; font-size: 10px; font-weight: bold; cursor: pointer; border-right: 1px solid #333; }
         #navbar li.active { background: rgba(255,255,255,0.1); color: #fff; border-bottom: 2px solid #39FF14; }
-        .nav-special { width: 40px; text-align: center; font-size: 12px; cursor: pointer; height: 44px; line-height: 44px; border-left: 1px solid #333; }
         #main-container { max-width: 500px; margin: 30px auto; padding: 15px; }
         .section { display: none; }
         .section.active { display: block !important; }
         .box-ui { background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.4); padding: 20px; border-radius: 12px; margin-bottom: 20px; }
+        .count-num { font-size: 40px; font-weight: bold; color: #39FF14; font-family: monospace; text-align: center; }
         .repo-btn { display: block; background: linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%); color: #333; border: 1px solid #999; padding: 10px; margin: 8px 0; border-radius: 8px; text-decoration: none; font-size: 12px; font-weight: bold; }
         .url-text { font-size: 9px; color: #666; display: block; font-weight: normal; margin-top: 2px; }
     </style>
@@ -40,51 +30,69 @@
         <li id="tab-pear" onclick="showSection('pear')">Pear</li>
         <li id="tab-xt" onclick="showSection('xt')">XT</li>
     </ul>
-    <div class="nav-special">:)</div>
 </div>
 
 <div id="main-container">
     <div id="sec-cydia" class="section active">
         <div class="box-ui">
-            <h2 style="font-size: 14px; color: #39FF14;">Status: Ready</h2>
+            <p style="font-size: 11px; text-align: center; color: #aaa;">Paquetes descargados:</p>
+            <div id="contador-paquetes" class="count-num">0</div>
+            <p style="font-size: 11px; text-align: center; color: #aaa; margin-top:10px;">Transferencia total:</p>
+            <div id="contador-bytes" class="count-num" style="font-size: 24px;">0 B</div>
         </div>
     </div>
     
     <div id="sec-xt" class="section">
         <div class="box-ui">
             <h2 style="font-size: 16px; margin-top: 0;">XT App Store</h2>
-            <a href="https://nicowtnow.github.io/Pear/debs/eu.heinelt.ifile_2.2.0-1_iphoneos-arm.deb" class="repo-btn">iFile<span class="url-text">debs/eu.heinelt.ifile_2.2.0-1_iphoneos-arm.deb</span></a>
-            <a href="https://nicowtnow.github.io/Pear/debs/com.r333d.cylinder_1.1_iphoneos-arm.deb" class="repo-btn">Cylinder<span class="url-text">debs/com.r333d.cylinder_1.1_iphoneos-arm.deb</span></a>
-            <a href="https://nicowtnow.github.io/Pear/debs/winterboard_0.9.3919_iphoneos-arm.deb" class="repo-btn">WinterBoard<span class="url-text">debs/winterboard_0.9.3919_iphoneos-arm.deb</span></a>
-            <a href="https://nicowtnow.github.io/Pear/debs/libactivator_1.9.13_iphoneos-arm.deb" class="repo-btn">Activator<span class="url-text">debs/libactivator_1.9.13_iphoneos-arm.deb</span></a>
-            <a href="https://nicowtnow.github.io/Pear/debs/com.exile90.icleaner_7.8.0_iphoneos-arm.deb" class="repo-btn">iCleaner<span class="url-text">debs/com.exile90.icleaner_7.8.0_iphoneos-arm.deb</span></a>
-            <a href="https://nicowtnow.github.io/Pear/debs/com.ixmoe.1pwn.veteris_2.1.1_iphoneos-arm.deb" class="repo-btn">Veteris<span class="url-text">debs/com.ixmoe.1pwn.veteris_2.1.1_iphoneos-arm.deb</span></a>
-            <a href="https://nicowtnow.github.io/Pear/debs/com.mathieubolard.killbackground_1.3.1-7_iphoneos-arm.deb" class="repo-btn">KillBackground<span class="url-text">debs/com.mathieubolard.killbackground_1.3.1-7_iphoneos-arm.deb</span></a>
-            <a href="https://nicowtnow.github.io/Pear/debs/com.nablac0d3.sslkillswitch2_0.14-3+debug_iphoneos-arm.deb" class="repo-btn">SSLKillSwitch2<span class="url-text">debs/com.nablac0d3.sslkillswitch2_0.14-3+debug_iphoneos-arm.deb</span></a>
-            <a href="https://nicowtnow.github.io/Pear/debs/com.phoenix.nospot_0.6_iphoneos-arm.deb" class="repo-btn">Phoenix<span class="url-text">debs/com.phoenix.nospot_0.6_iphoneos-arm.deb</span></a>
-            <a href="https://nicowtnow.github.io/Pear/debs/com.hackyouriphone.infinidock_2.1.2-1_iphoneos-arm.deb" class="repo-btn">Infinidock<span class="url-text">debs/com.hackyouriphone.infinidock_2.1.2-1_iphoneos-arm.deb</span></a>
-            <a href="https://nicowtnow.github.io/Pear/debs/com.ijinshan.kbatterydoctorpro.universal_4.6.1-11_iphoneos-arm.deb" class="repo-btn">BatteryDoctor<span class="url-text">debs/com.ijinshan.kbatterydoctorpro.universal_4.6.1-11_iphoneos-arm.deb</span></a>
-            <a href="https://nicowtnow.github.io/Pear/debs/com.rpetrich.emphasize_0.2.1_iphoneos-arm.deb" class="repo-btn">Emphasize<span class="url-text">debs/com.rpetrich.emphasize_0.2.1_iphoneos-arm.deb</span></a>
-            <a href="https://nicowtnow.github.io/Pear/debs/com.skyglow.itunesstorex_3.2_iphoneos-arm.deb" class="repo-btn">iTunesStoreX<span class="url-text">debs/com.skyglow.itunesstorex_3.2_iphoneos-arm.deb</span></a>
-            <a href="https://nicowtnow.github.io/Pear/debs/com.skyglow.mapsx_3.2.1_iphoneos-arm.deb" class="repo-btn">MapsX<span class="url-text">debs/com.skyglow.mapsx_3.2.1_iphoneos-arm.deb</span></a>
-            <a href="https://nicowtnow.github.io/Pear/debs/com.skyglow.stocksx_2.4_iphoneos-arm.deb" class="repo-btn">StocksX<span class="url-text">debs/com.skyglow.stocksx_2.4_iphoneos-arm.deb</span></a>
-            <a href="https://nicowtnow.github.io/Pear/debs/com.skyglow.weatherx_3.4_iphoneos-arm.deb" class="repo-btn">WeatherX<span class="url-text">debs/com.skyglow.weatherx_3.4_iphoneos-arm.deb</span></a>
-            <a href="https://nicowtnow.github.io/Pear/debs/com.vsz.redeb_1.0.3_iphoneos-arm.deb" class="repo-btn">VSZRedeb<span class="url-text">debs/com.vsz.redeb_1.0.3_iphoneos-arm.deb</span></a>
-            <a href="https://nicowtnow.github.io/Pear/debs/gawk_3.1.6-2p_iphoneos-arm.deb" class="repo-btn">Gawk<span class="url-text">debs/gawk_3.1.6-2p_iphoneos-arm.deb</span></a>
-            <a href="https://nicowtnow.github.io/Pear/debs/moe.yzu.veterishelper_1.0.0-53+debug_iphoneos-arm.deb" class="repo-btn">VeterisHelper<span class="url-text">debs/moe.yzu.veterishelper_1.0.0-53+debug_iphoneos-arm.deb</span></a>
-            <a href="https://nicowtnow.github.io/Pear/debs/net.angelxwind.appsyncunified_84.0_iphoneos-arm.deb" class="repo-btn">AppSync<span class="url-text">debs/net.angelxwind.appsyncunified_84.0_iphoneos-arm.deb</span></a>
-            <a href="https://nicowtnow.github.io/Pear/debs/net.nekokawa.appstorefix_0.3.5-4+debug_iphoneos-arm.deb" class="repo-btn">AppStoreFix<span class="url-text">debs/net.nekokawa.appstorefix_0.3.5-4+debug_iphoneos-arm.deb</span></a>
-            <a href="https://nicowtnow.github.io/Pear/debs/org.thebigboss.blurredindbackround_3.0-1_iphoneos-arm.deb" class="repo-btn">BlurredBackground<span class="url-text">debs/org.thebigboss.blurredindbackround_3.0-1_iphoneos-arm.deb</span></a>
-            <a href="https://nicowtnow.github.io/Pear/debs/org.thebigboss.carrierlogoszeppelin_2.0_iphoneos-arm.deb" class="repo-btn">CarrierLogo<span class="url-text">debs/org.thebigboss.carrierlogoszeppelin_2.0_iphoneos-arm.deb</span></a>
-            <a href="https://nicowtnow.github.io/Pear/debs/org.thebigboss.suaveextrashdtheme_1.0_iphoneos-arm.deb" class="repo-btn">SuaveExtrashd<span class="url-text">debs/org.thebigboss.suaveextrashdtheme_1.0_iphoneos-arm.deb</span></a>
-            <a href="https://nicowtnow.github.io/Pear/debs/siriport.ru.siri.ios6.1.x_1.0_iphoneos-arm.deb" class="repo-btn">SiriPort<span class="url-text">debs/siriport.ru.siri.ios6.1.x_1.0_iphoneos-arm.deb</span></a>
-            <a href="https://nicowtnow.github.io/Pear/debs/uk.invoxiplaygames.checkmatestore_1.2_iphoneos-arm.deb" class="repo-btn">Checkm8<span class="url-text">debs/uk.invoxiplaygames.checkmatestore_1.2_iphoneos-arm.deb</span></a>
+            <a href="#" class="repo-btn" onclick="descargar('iFile', 9735562, 'eu.heinelt.ifile_2.2.0-1_iphoneos-arm.deb')">iFile<span class="url-text">debs/eu.heinelt.ifile_2.2.0-1_iphoneos-arm.deb</span></a>
+            <a href="#" class="repo-btn" onclick="descargar('Cylinder', 504118, 'com.r333d.cylinder_1.1_iphoneos-arm.deb')">Cylinder<span class="url-text">debs/com.r333d.cylinder_1.1_iphoneos-arm.deb</span></a>
+            <a href="#" class="repo-btn" onclick="descargar('WinterBoard', 170066, 'winterboard_0.9.3919_iphoneos-arm.deb')">WinterBoard<span class="url-text">debs/winterboard_0.9.3919_iphoneos-arm.deb</span></a>
+            <a href="#" class="repo-btn" onclick="descargar('Activator', 800000, 'libactivator_1.9.13_iphoneos-arm.deb')">Activator<span class="url-text">debs/libactivator_1.9.13_iphoneos-arm.deb</span></a>
+            <a href="#" class="repo-btn" onclick="descargar('iCleaner', 2500000, 'com.exile90.icleaner_7.8.0_iphoneos-arm.deb')">iCleaner<span class="url-text">debs/com.exile90.icleaner_7.8.0_iphoneos-arm.deb</span></a>
         </div>
     </div>
 </div>
 
-<script type="text/javascript">
-    function showSection(id) {
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+    import { getFirestore, doc, onSnapshot, runTransaction } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+
+    const firebaseConfig = { /* Tu config aquí */ };
+    const db = getFirestore(initializeApp(firebaseConfig));
+    const statsRef = doc(db, "stats", "global");
+
+    // Formateador aritmético de unidades
+    const formatBytes = (bytes) => {
+        if (bytes === 0) return '0 B';
+        const k = 1024;
+        const sizes = ['B', 'KB', 'MB', 'GB', 'TB'];
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+        return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    };
+
+    // Escuchar cambios en tiempo real
+    onSnapshot(statsRef, (doc) => {
+        if (doc.exists()) {
+            const data = doc.data();
+            document.getElementById('contador-paquetes').innerText = data.total_downloads || 0;
+            document.getElementById('contador-bytes').innerText = formatBytes(data.total_bytes || 0);
+        }
+    });
+
+    window.descargar = async function(nombre, bytes, archivo) {
+        event.preventDefault();
+        await runTransaction(db, async (transaction) => {
+            const sfDoc = await transaction.get(statsRef);
+            transaction.update(statsRef, { 
+                total_bytes: (sfDoc.data().total_bytes || 0) + bytes, 
+                total_downloads: (sfDoc.data().total_downloads || 0) + 1 
+            });
+        });
+        window.location.href = 'https://nicowtnow.github.io/Pear/debs/' + archivo;
+    };
+
+    window.showSection = function(id) {
         document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
         document.querySelectorAll('#navbar li').forEach(t => t.classList.remove('active'));
         document.getElementById('sec-' + id).classList.add('active');
