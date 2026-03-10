@@ -1,34 +1,48 @@
-<!DOCTYPE HTML>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pear Inc. - Universal Repo</title>
     <style>
-        body { background: linear-gradient(to bottom, #660000 0%, #1a0000 100%); background-attachment: fixed; color: #333; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-        #navbar { background: linear-gradient(to bottom, #454545 0%, #111111 100%); height: 44px; display: flex; align-items: center; padding: 0 10px; color: white; position: sticky; top: 0; z-index: 1000; font-weight: bold; }
-        .section { display: none; padding: 20px; }
-        .section.active { display: block; }
-        .box-ui { background: #f9f9f9; border: 1px solid #ccc; padding: 20px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .count-num { font-size: 30px; font-weight: bold; color: #39FF14; text-align: center; }
-        .apple-btn { display: block; background: linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%); border: 1px solid #999; padding: 12px; margin: 8px 0; text-align: left; text-decoration: none; color: #333; border-radius: 8px; font-weight: bold; font-size: 13px; box-shadow: 0 1px 3px rgba(0,0,0,0.2); }
-        .apple-btn:active { background: #ccc; }
-        .url-text { font-size: 9px; color: #777; display: block; margin-top: 2px; }
+        body { background: linear-gradient(to bottom, #660000 0%, #1a0000 100%); background-attachment: fixed; color: #ffffff; font-family: sans-serif; margin: 0; padding: 0; min-height: 100vh; }
+        #navbar { background: linear-gradient(to bottom, #454545 0%, #111111 100%); height: 44px; border-bottom: 1px solid #000; display: flex; align-items: center; padding: 0 10px; position: sticky; top: 0; z-index: 1000; }
+        .apple-icon { font-size: 18px; color: white; margin-right: 10px; cursor: pointer; padding: 5px; }
+        #navbar ul { list-style: none; margin: 0; padding: 0; display: flex; flex: 1; height: 100%; }
+        #navbar li { flex: 1; text-align: center; line-height: 44px; color: #ccc; font-size: 10px; font-weight: bold; cursor: pointer; border-right: 1px solid #333; }
+        #navbar li.active { background: rgba(255,255,255,0.1); color: #fff; border-bottom: 2px solid #39FF14; }
+        #main-container { max-width: 500px; margin: 30px auto; padding: 15px; }
+        .section { display: none; }
+        .section.active { display: block !important; }
+        .box-ui { background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.4); padding: 20px; border-radius: 12px; margin-bottom: 20px; }
+        .count-num { font-size: 40px; font-weight: bold; color: #39FF14; font-family: monospace; text-align: center; }
+        .repo-btn { display: block; background: linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%); color: #333; border: 1px solid #999; padding: 10px; margin: 6px 0; border-radius: 8px; text-decoration: none; font-size: 12px; font-weight: bold; text-align: left; }
     </style>
 </head>
 <body>
 
-<div id="navbar">Pear Inc. Repository</div>
+<div id="navbar">
+    <div class="apple-icon"></div>
+    <ul>
+        <li id="tab-cydia" class="active" onclick="showSection('cydia')">Cydia</li>
+        <li id="tab-5d" onclick="showSection('5d')">5D</li>
+        <li id="tab-pear" onclick="showSection('pear')">Pear</li>
+        <li id="tab-xt" onclick="showSection('xt')">XT</li>
+    </ul>
+</div>
 
 <div id="main-container">
-    <div id="sec-xt" class="section active">
+    <div id="sec-cydia" class="section active">
         <div class="box-ui">
             <div id="contador-dinamico" class="count-num">0</div>
-            <p style="text-align: center; font-size: 10px; margin: 0;">DESCARGAS TOTALES</p>
-            <div id="bytes-dinamico" style="text-align: center; font-size: 14px; font-weight: bold;">0 B</div>
+            <div id="bytes-dinamico" style="text-align: center; font-size: 14px; color: #39FF14;">0 B</div>
         </div>
-
-        <a href="#" class="apple-btn" onclick="descargar('iFile', 9735562, 'eu.heinelt.ifile_2.2.0-1_iphoneos-arm.deb')">iFile<span class="url-text">debs/eu.heinelt.ifile_2.2.0-1_iphoneos-arm.deb</span></a>
+    </div>
+    
+    <div id="sec-xt" class="section">
+        <div class="box-ui">
+            <h2 style="font-size: 16px;">XT App Store</h2>
+            <a href="#" class="apple-btn" onclick="descargar('iFile', 9735562, 'eu.heinelt.ifile_2.2.0-1_iphoneos-arm.deb')">iFile<span class="url-text">debs/eu.heinelt.ifile_2.2.0-1_iphoneos-arm.deb</span></a>
         <a href="#" class="apple-btn" onclick="descargar('Cylinder', 504118, 'com.r333d.cylinder_1.1_iphoneos-arm.deb')">Cylinder<span class="url-text">debs/com.r333d.cylinder_1.1_iphoneos-arm.deb</span></a>
         <a href="#" class="apple-btn" onclick="descargar('WinterBoard', 170066, 'winterboard_0.9.3919_iphoneos-arm.deb')">WinterBoard<span class="url-text">debs/winterboard_0.9.3919_iphoneos-arm.deb</span></a>
         <a href="#" class="apple-btn" onclick="descargar('Activator', 800000, 'libactivator_1.9.13_iphoneos-arm.deb')">Activator<span class="url-text">debs/libactivator_1.9.13_iphoneos-arm.deb</span></a>
@@ -58,6 +72,7 @@
         <a href="#" class="apple-btn" onclick="descargar('SuaveExtrashd', 1115376, 'org.thebigboss.suaveextrashdtheme_1.0_iphoneos-arm.deb')">SuaveExtrashd<span class="url-text">debs/org.thebigboss.suaveextrashdtheme_1.0_iphoneos-arm.deb</span></a>
         <a href="#" class="apple-btn" onclick="descargar('SiriPort', 17160542, 'siriport.ru.siri.ios6.1.x_1.0_iphoneos-arm.deb')">SiriPort<span class="url-text">debs/siriport.ru.siri.ios6.1.x_1.0_iphoneos-arm.deb</span></a>
     </div>
+    </div>
 </div>
 
 <script type="module">
@@ -80,8 +95,7 @@
         if (doc.exists()) {
             const data = doc.data();
             const formatBytes = (b) => {
-                const k = 1024;
-                const sizes = ['B', 'KB', 'MB', 'GB'];
+                const k = 1024; const sizes = ['B', 'KB', 'MB', 'GB'];
                 const i = Math.floor(Math.log(b) / Math.log(k));
                 return parseFloat((b / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
             };
@@ -90,18 +104,24 @@
         }
     });
 
-    window.descargar = function(nombre, bytes, archivo) {
+    window.registrarDescarga = async function(nombre, bytes, archivo) {
         event.preventDefault();
-        runTransaction(db, async (transaction) => {
-            const sfDoc = await transaction.get(statsRef);
-            transaction.update(statsRef, { 
-                total_bytes: (sfDoc.data().total_bytes || 0) + bytes, 
-                total_downloads: (sfDoc.data().total_downloads || 0) + 1 
+        try {
+            await runTransaction(db, async (transaction) => {
+                const sfDoc = await transaction.get(statsRef);
+                transaction.update(statsRef, { 
+                    total_bytes: (sfDoc.data().total_bytes || 0) + bytes, 
+                    total_downloads: (sfDoc.data().total_downloads || 0) + 1 
+                });
             });
-        }).then(() => {
-            window.location.href = 'https://nicowtnow.github.io/Pear/debs/' + archivo;
-        }).catch(e => console.error("Error al registrar:", e));
+        } catch (e) { console.error("Error:", e); }
+        window.location.href = 'https://nicowtnow.github.io/Pear/debs/' + archivo;
     };
+
+    window.showSection = function(id) {
+        document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+        document.getElementById('sec-' + id).classList.add('active');
+    }
 </script>
 </body>
 </html>
