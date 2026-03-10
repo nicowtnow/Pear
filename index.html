@@ -1,67 +1,64 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html>
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pear Inc. - Universal Repo</title>
     <style>
-        body { background: linear-gradient(to bottom, #660000 0%, #1a0000 100%); background-attachment: fixed; color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 0; min-height: 100vh; }
-        #navbar { background: linear-gradient(to bottom, #454545 0%, #111111 100%); height: 44px; border-bottom: 1px solid #000; display: flex; align-items: center; padding: 0 10px; position: sticky; top: 0; z-index: 1000; }
-        .apple-icon { font-size: 18px; color: white; margin-right: 10px; cursor: pointer; padding: 5px; }
-        #navbar ul { list-style: none; margin: 0; padding: 0; display: flex; flex: 1; height: 100%; }
-        #navbar li { flex: 1; text-align: center; line-height: 44px; color: #ccc; font-size: 10px; font-weight: bold; cursor: pointer; border-right: 1px solid #333; }
-        #navbar li.active { background: rgba(255,255,255,0.1); color: #fff; border-bottom: 2px solid #39FF14; }
-        .nav-special { width: 40px; text-align: center; font-size: 12px; cursor: pointer; height: 44px; line-height: 44px; border-left: 1px solid #333; }
-        #secret-btn { color: #39FF14; font-weight: bold; } 
-        #main-container { max-width: 500px; margin: 30px auto; padding: 15px; }
-        .section { display: none; }
-        .section.active { display: block !important; }
-        .box-ui { background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.4); padding: 20px; border-radius: 12px; margin-bottom: 20px; }
-        .count-num { font-size: 50px; font-weight: bold; color: #39FF14; font-family: monospace; }
-        .center-wrapper { display: flex; justify-content: center; width: 100%; margin-top: 20px; }
-        .btn-ui { background: #333; color: white; border: 1px solid #555; padding: 12px 25px; border-radius: 8px; cursor: pointer; font-size: 14px; text-decoration: none; font-weight: bold; text-align: center; }
-        #toast { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #1a1a1a; color: #fff; padding: 25px; border-radius: 15px; z-index: 2000; border: 1px solid #444; width: 280px; text-align: center; }
-        footer { text-align: center; padding: 30px 0; color: #444; font-size: 10px; pointer-events: none; }
+        body { background: linear-gradient(to bottom, #660000 0%, #1a0000 100%); background-attachment: fixed; color: #333; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+        #navbar { background: linear-gradient(to bottom, #454545 0%, #111111 100%); height: 44px; display: flex; align-items: center; padding: 0 10px; color: white; position: sticky; top: 0; z-index: 1000; font-weight: bold; }
+        .section { display: none; padding: 20px; }
+        .section.active { display: block; }
+        .box-ui { background: #f9f9f9; border: 1px solid #ccc; padding: 20px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .count-num { font-size: 30px; font-weight: bold; color: #39FF14; text-align: center; }
+        .apple-btn { display: block; background: linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%); border: 1px solid #999; padding: 12px; margin: 8px 0; text-align: left; text-decoration: none; color: #333; border-radius: 8px; font-weight: bold; font-size: 13px; box-shadow: 0 1px 3px rgba(0,0,0,0.2); }
+        .apple-btn:active { background: #ccc; }
+        .url-text { font-size: 9px; color: #777; display: block; margin-top: 2px; }
     </style>
 </head>
 <body>
 
-<div id="toast">
-    <div id="toast-header" style="margin-bottom: 15px; font-weight: bold;"></div>
-    <div id="toast-body"></div>
-</div>
-
-<div id="navbar">
-    <div class="apple-icon" onclick="checkMonitorClicks()"></div>
-    <ul>
-        <li id="tab-cydia" class="active" onclick="showSection('cydia')">Cydia</li>
-        <li id="tab-5d" onclick="showSection('5d')">5D</li>
-        <li id="tab-pear" onclick="showSection('pear')">Pear</li>
-        <li id="tab-xt" onclick="showSection('xt')">XT</li>
-    </ul>
-    <div id="secret-btn" class="nav-special" onclick="openMainPopup()">:)</div>
-</div>
+<div id="navbar">Pear Inc. Repository</div>
 
 <div id="main-container">
-    <div id="sec-cydia" class="section active">
+    <div id="sec-xt" class="section active">
         <div class="box-ui">
-            <p style="font-size: 11px; color: #aaa; margin: 0 15px 15px 0;">Telemetría de Red (Real)</p>
-            <div id="contador-dinamico" class="count-num" style="text-align: center;">0</div>
-            <p style="font-size: 10px; color: #888; text-align: center; margin-top: -5px;">Descargas</p>
-            <div id="bytes-dinamico" style="font-size: 24px; font-weight: bold; color: #39FF14; font-family: monospace; text-align: center; margin-top: 10px;">0 B</div>
-            <p style="font-size: 10px; color: #888; text-align: center; margin-top: -5px;">Tráfico total</p>
+            <div id="contador-dinamico" class="count-num">0</div>
+            <p style="text-align: center; font-size: 10px; margin: 0;">DESCARGAS TOTALES</p>
+            <div id="bytes-dinamico" style="text-align: center; font-size: 14px; font-weight: bold;">0 B</div>
         </div>
-        <div class="center-wrapper">
-            <a href="#" class="btn-ui" onclick="event.preventDefault(); registrarDescarga('iFile', 4500000).then(() => { window.location.href = 'https://nicowtnow.github.io/Pear/debs/eu.heinelt.ifile_2.2.0-1_iphoneos-arm.deb'; })">Descargar iFile</a>
-        </div>
-    </div>
-    
-    <div id="sec-5d" class="section"><div class="box-ui"><h2 style="color: #39FF14; font-size: 18px; margin-top: 0;">MEMORIA 5D</h2><p>El Big Grand Reset es una transición de escala.</p></div></div>
-    <div id="sec-pear" class="section"><div class="box-ui"><h2>Pear Inc.</h2></div></div>
-    <div id="sec-xt" class="section"><div class="box-ui"><h2>XT Kernel</h2></div></div>
-</div>
 
-<footer>&copy; 2026 Pear Inc. - Nico 2026</footer>
+        <a href="#" class="apple-btn" onclick="descargar('iFile', 9735562, 'eu.heinelt.ifile_2.2.0-1_iphoneos-arm.deb')">iFile<span class="url-text">debs/eu.heinelt.ifile_2.2.0-1_iphoneos-arm.deb</span></a>
+        <a href="#" class="apple-btn" onclick="descargar('Cylinder', 504118, 'com.r333d.cylinder_1.1_iphoneos-arm.deb')">Cylinder<span class="url-text">debs/com.r333d.cylinder_1.1_iphoneos-arm.deb</span></a>
+        <a href="#" class="apple-btn" onclick="descargar('WinterBoard', 170066, 'winterboard_0.9.3919_iphoneos-arm.deb')">WinterBoard<span class="url-text">debs/winterboard_0.9.3919_iphoneos-arm.deb</span></a>
+        <a href="#" class="apple-btn" onclick="descargar('Activator', 800000, 'libactivator_1.9.13_iphoneos-arm.deb')">Activator<span class="url-text">debs/libactivator_1.9.13_iphoneos-arm.deb</span></a>
+        <a href="#" class="apple-btn" onclick="descargar('iCleaner', 2500000, 'com.exile90.icleaner_7.8.0_iphoneos-arm.deb')">iCleaner<span class="url-text">debs/com.exile90.icleaner_7.8.0_iphoneos-arm.deb</span></a>
+        
+        <a href="#" class="apple-btn" onclick="descargar('Veteris', 1950196, 'com.ixmoe.1pwn.veteris_2.1.1_iphoneos-arm.deb')">Veteris<span class="url-text">debs/com.ixmoe.1pwn.veteris_2.1.1_iphoneos-arm.deb</span></a>
+        <a href="#" class="apple-btn" onclick="descargar('KillBackground', 71286, 'com.mathieubolard.killbackground_1.3.1-7_iphoneos-arm.deb')">KillBackground<span class="url-text">debs/com.mathieubolard.killbackground_1.3.1-7_iphoneos-arm.deb</span></a>
+        <a href="#" class="apple-btn" onclick="descargar('SSLKillSwitch2', 8278, 'com.nablac0d3.sslkillswitch2_0.14-3+debug_iphoneos-arm.deb')">SSLKillSwitch2<span class="url-text">debs/com.nablac0d3.sslkillswitch2_0.14-3+debug_iphoneos-arm.deb</span></a>
+        <a href="#" class="apple-btn" onclick="descargar('Phoenix', 2292, 'com.phoenix.nospot_0.6_iphoneos-arm.deb')">Phoenix<span class="url-text">debs/com.phoenix.nospot_0.6_iphoneos-arm.deb</span></a>
+        <a href="#" class="apple-btn" onclick="descargar('Infinidock', 62848, 'com.hackyouriphone.infinidock_2.1.2-1_iphoneos-arm.deb')">Infinidock<span class="url-text">debs/com.hackyouriphone.infinidock_2.1.2-1_iphoneos-arm.deb</span></a>
+
+        <a href="#" class="apple-btn" onclick="descargar('BatteryDoctor', 3061308, 'com.ijinshan.kbatterydoctorpro.universal_4.6.1-11_iphoneos-arm.deb')">BatteryDoctor<span class="url-text">debs/com.ijinshan.kbatterydoctorpro.universal_4.6.1-11_iphoneos-arm.deb</span></a>
+        <a href="#" class="apple-btn" onclick="descargar('Emphasize', 6896, 'com.rpetrich.emphasize_0.2.1_iphoneos-arm.deb')">Emphasize<span class="url-text">debs/com.rpetrich.emphasize_0.2.1_iphoneos-arm.deb</span></a>
+        <a href="#" class="apple-btn" onclick="descargar('iTunesStoreX', 115508, 'com.skyglow.itunesstorex_3.2_iphoneos-arm.deb')">iTunesStoreX<span class="url-text">debs/com.skyglow.itunesstorex_3.2_iphoneos-arm.deb</span></a>
+        <a href="#" class="apple-btn" onclick="descargar('MapsX', 155448, 'com.skyglow.mapsx_3.2.1_iphoneos-arm.deb')">MapsX<span class="url-text">debs/com.skyglow.mapsx_3.2.1_iphoneos-arm.deb</span></a>
+        <a href="#" class="apple-btn" onclick="descargar('StocksX', 18258, 'com.skyglow.stocksx_2.4_iphoneos-arm.deb')">StocksX<span class="url-text">debs/com.skyglow.stocksx_2.4_iphoneos-arm.deb</span></a>
+
+        <a href="#" class="apple-btn" onclick="descargar('WeatherX', 85034, 'com.skyglow.weatherx_3.4_iphoneos-arm.deb')">WeatherX<span class="url-text">debs/com.skyglow.weatherx_3.4_iphoneos-arm.deb</span></a>
+        <a href="#" class="apple-btn" onclick="descargar('VSZRedeb', 3558, 'com.vsz.redeb_1.0.3_iphoneos-arm.deb')">VSZRedeb<span class="url-text">debs/com.vsz.redeb_1.0.3_iphoneos-arm.deb</span></a>
+        <a href="#" class="apple-btn" onclick="descargar('Gawk', 831308, 'gawk_3.1.6-2p_iphoneos-arm.deb')">Gawk<span class="url-text">debs/gawk_3.1.6-2p_iphoneos-arm.deb</span></a>
+        <a href="#" class="apple-btn" onclick="descargar('VeterisHelper', 9744, 'moe.yzu.veterishelper_1.0.0-53+debug_iphoneos-arm.deb')">VeterisHelper<span class="url-text">debs/moe.yzu.veterishelper_1.0.0-53+debug_iphoneos-arm.deb</span></a>
+        <a href="#" class="apple-btn" onclick="descargar('AppSync', 43176, 'net.angelxwind.appsyncunified_84.0_iphoneos-arm.deb')">AppSync<span class="url-text">debs/net.angelxwind.appsyncunified_84.0_iphoneos-arm.deb</span></a>
+
+        <a href="#" class="apple-btn" onclick="descargar('AppStoreFix', 30510, 'net.nekokawa.appstorefix_0.3.5-4+debug_iphoneos-arm.deb')">AppStoreFix<span class="url-text">debs/net.nekokawa.appstorefix_0.3.5-4+debug_iphoneos-arm.deb</span></a>
+        <a href="#" class="apple-btn" onclick="descargar('BlurredBackground', 12924, 'org.thebigboss.blurredindbackround_3.0-1_iphoneos-arm.deb')">BlurredBackground<span class="url-text">debs/org.thebigboss.blurredindbackround_3.0-1_iphoneos-arm.deb</span></a>
+        <a href="#" class="apple-btn" onclick="descargar('CarrierLogo', 386704, 'org.thebigboss.carrierlogoszeppelin_2.0_iphoneos-arm.deb')">CarrierLogo<span class="url-text">debs/org.thebigboss.carrierlogoszeppelin_2.0_iphoneos-arm.deb</span></a>
+        <a href="#" class="apple-btn" onclick="descargar('SuaveExtrashd', 1115376, 'org.thebigboss.suaveextrashdtheme_1.0_iphoneos-arm.deb')">SuaveExtrashd<span class="url-text">debs/org.thebigboss.suaveextrashdtheme_1.0_iphoneos-arm.deb</span></a>
+        <a href="#" class="apple-btn" onclick="descargar('SiriPort', 17160542, 'siriport.ru.siri.ios6.1.x_1.0_iphoneos-arm.deb')">SiriPort<span class="url-text">debs/siriport.ru.siri.ios6.1.x_1.0_iphoneos-arm.deb</span></a>
+    </div>
+</div>
 
 <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
@@ -83,9 +80,8 @@
         if (doc.exists()) {
             const data = doc.data();
             const formatBytes = (b) => {
-                if (b === 0) return '0 B';
                 const k = 1024;
-                const sizes = ['B', 'KB', 'MB', 'GB', 'TB'];
+                const sizes = ['B', 'KB', 'MB', 'GB'];
                 const i = Math.floor(Math.log(b) / Math.log(k));
                 return parseFloat((b / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
             };
@@ -94,20 +90,18 @@
         }
     });
 
-    window.registrarDescarga = async function(nombre, bytes) {
-        try {
-            await runTransaction(db, async (transaction) => {
-                const sfDoc = await transaction.get(statsRef);
-                transaction.update(statsRef, { total_bytes: (sfDoc.data().total_bytes || 0) + bytes, total_downloads: (sfDoc.data().total_downloads || 0) + 1 });
+    window.descargar = function(nombre, bytes, archivo) {
+        event.preventDefault();
+        runTransaction(db, async (transaction) => {
+            const sfDoc = await transaction.get(statsRef);
+            transaction.update(statsRef, { 
+                total_bytes: (sfDoc.data().total_bytes || 0) + bytes, 
+                total_downloads: (sfDoc.data().total_downloads || 0) + 1 
             });
-        } catch (e) { console.error("Error al registrar:", e); }
+        }).then(() => {
+            window.location.href = 'https://nicowtnow.github.io/Pear/debs/' + archivo;
+        }).catch(e => console.error("Error al registrar:", e));
     };
-</script>
-<script type="text/javascript">
-    function showSection(id) { document.querySelectorAll('.section').forEach(s => s.classList.remove('active')); document.querySelectorAll('#navbar li').forEach(t => t.classList.remove('active')); document.getElementById('sec-' + id).classList.add('active'); document.getElementById('tab-' + id).classList.add('active'); }
-    function openMainPopup() { document.getElementById('toast').style.display = 'block'; }
-    function closeToast() { document.getElementById('toast').style.display = 'none'; }
-    function checkMonitorClicks() { alert("PEAR OS MONITOR\nSystem Active"); }
 </script>
 </body>
 </html>
