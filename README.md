@@ -1,5 +1,4 @@
 # Pear
-Repositorio para la preservacion y gestion de paquetes .deb en sistemas de ios heredado o legacy os
 Pear Inc. | Universal Repository
 Overview
 This repository serves as a centralized, high-fidelity archival and distribution framework for legacy software and system modifications. Pear Inc. was established to combat the rampant fragmentation, poor documentation, and systemic abandonment of software packages within the community.
