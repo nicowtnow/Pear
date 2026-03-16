@@ -1,7 +1,7 @@
 Origin: Pear Inc.
-Label: Pear Inc.
+Label: Pear Flux.
 Suite: stable
-Version: 9.8
+Version: 11.3
 Codename: pear
 Architectures: iphoneos-arm
 Components: main
